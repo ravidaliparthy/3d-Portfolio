@@ -1,0 +1,1189 @@
+{
+  "owner": {
+    "name": "Daliparthy Ravi Krishna Charan",
+    "title": "Software Engineer & AI Researcher",
+    "email": "ravidaliparthy@gmail.com",
+    "phone": "+91 9182021304",
+    "location": "Hyderabad, India",
+    "linkedin": "https://linkedin.com/in/ravi-daliparthy",
+    "github": "https://github.com/ravidaliparthy",
+    "portfolioUrl": "https://github.com/ravidaliparthy",
+    "bioSummary": "Software engineer and published researcher with hands-on experience building large-scale deep learning systems, full-stack applications, and analytical dashboards. Peer-reviewed publication at IIT ISM Dhanbad; national AI/ML hackathon finalist (IIT Tirupati & Ministry of Panchayati Raj)."
+  },
+  "guide": {
+    "name": "Charan",
+    "role": "Journey Conductor",
+    "appearanceDescription": "Stylized avatar wearing gold sweater over white collared shirt, white trousers, clear glasses, neat black beard and hair, standing with arms crossed.",
+    "avatarImage": "/assets/guide/guide_reference.jpg",
+    "introLines": [
+      "Welcome aboard the Central Milestone Express!",
+      "I am your conductor for today's journey across Ravi's career and research portfolio.",
+      "Fasten your seatbelt as we roll through live systems, published research, and technical milestones."
+    ],
+    "outroLines": [
+      "We have reached the Terminus Station. Thank you for travelling with us today!",
+      "You can explore the full resume below, inspect the technical specs, or ride the journey again anytime."
+    ],
+    "idleLines": [
+      "Admiring the view? Use the next station controls or scroll along the track whenever you are ready.",
+      "Feel free to open the station ticket or inspect the live architecture links."
+    ],
+    "verifiedByOwner": true
+  },
+  "intro": {
+    "stationName": "Departure Concourse: Origin Station",
+    "platformNumber": "Track 01",
+    "destination": "Terminus Station: System Architecture & Contact",
+    "departureTime": "10:00 AM IST",
+    "welcomeTitle": "Welcome to The Ravi Express",
+    "welcomeSubtitle": "Engineering Milestone Journey • Interactive 3D Railway",
+    "tagline": "Deep Learning • Distributed Systems • Full-Stack Architecture",
+    "callToAction": "Board the Ravi Express"
+  },
+  "outro": {
+    "stationName": "Terminus Station: Hyderabad Grand Central",
+    "farewellTitle": "End of Line: Ready to Build Together",
+    "farewellSubtitle": "Connect for Full-Stack, AI Engineering, and Research Roles",
+    "closingNotes": "Thank you for riding through this interactive journey. Every station is backed by verified engineering accomplishments, peer-reviewed papers, and production code.",
+    "resumeUrl": "https://github.com/ravidaliparthy",
+    "contactLinks": [
+      {
+        "label": "Email: ravidaliparthy@gmail.com",
+        "url": "mailto:ravidaliparthy@gmail.com",
+        "type": "external"
+      },
+      {
+        "label": "LinkedIn Profile",
+        "url": "https://linkedin.com/in/ravi-daliparthy",
+        "type": "external"
+      },
+      {
+        "label": "GitHub Repositories",
+        "url": "https://github.com/ravidaliparthy",
+        "type": "github"
+      }
+    ]
+  },
+  "howBuilt": {
+    "stackSummary": "Vite + React 18 + TypeScript + Three.js + React Three Fiber + Drei + GSAP + Zustand + Tailwind CSS + Web Audio API",
+    "architectureNotes": "Procedural CatmullRom track curve with arc-length parametric train positioning, dual-pass PBR lighting, responsive aspect-aware mobile view offset, strict zero-hallucination Zod schema validation, and 3-tier runtime performance scalability.",
+    "measuredMetrics": {
+      "drawCallsLow": 14,
+      "drawCallsHigh": 42,
+      "triangleCount": 36500,
+      "bundleGzipKB": 330,
+      "lighthouseMobilePerformance": "TODO",
+      "lighthouseDesktopPerformance": "TODO"
+    }
+  },
+  "skills": [
+    {
+      "id": "python",
+      "name": "Python",
+      "category": "languages",
+      "level": "proficient"
+    },
+    {
+      "id": "c_cpp",
+      "name": "C / C++",
+      "category": "languages",
+      "level": "proficient"
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "category": "languages",
+      "level": "proficient"
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "category": "languages",
+      "level": "proficient"
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript / JavaScript",
+      "category": "languages",
+      "level": "proficient"
+    },
+    {
+      "id": "pytorch",
+      "name": "PyTorch",
+      "category": "ml_data",
+      "level": "proficient"
+    },
+    {
+      "id": "tensorflow",
+      "name": "TensorFlow",
+      "category": "ml_data",
+      "level": "proficient"
+    },
+    {
+      "id": "scikit_learn",
+      "name": "Scikit-learn",
+      "category": "ml_data",
+      "level": "proficient"
+    },
+    {
+      "id": "opencv",
+      "name": "OpenCV",
+      "category": "ml_data",
+      "level": "proficient"
+    },
+    {
+      "id": "transformers",
+      "name": "Transformers (HuggingFace)",
+      "category": "ml_data",
+      "level": "proficient"
+    },
+    {
+      "id": "powerbi",
+      "name": "Power BI & DAX",
+      "category": "ml_data",
+      "level": "proficient"
+    },
+    {
+      "id": "react",
+      "name": "React.js / Next.js",
+      "category": "full_stack",
+      "level": "proficient"
+    },
+    {
+      "id": "angular",
+      "name": "Angular 16",
+      "category": "full_stack",
+      "level": "proficient"
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js & Express.js",
+      "category": "full_stack",
+      "level": "proficient"
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite & Turso",
+      "category": "systems_cs",
+      "level": "proficient"
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB & MySQL",
+      "category": "systems_cs",
+      "level": "proficient"
+    },
+    {
+      "id": "cloudflare_workers",
+      "name": "Cloudflare Workers & Durable Objects",
+      "category": "systems_cs",
+      "level": "proficient"
+    },
+    {
+      "id": "fastapi",
+      "name": "FastAPI",
+      "category": "full_stack",
+      "level": "proficient"
+    },
+    {
+      "id": "dsa",
+      "name": "Data Structures & Algorithms",
+      "category": "systems_cs",
+      "level": "proficient"
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "category": "systems_cs",
+      "level": "proficient"
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "category": "systems_cs",
+      "level": "proficient"
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "category": "systems_cs",
+      "level": "proficient"
+    },
+    {
+      "id": "git",
+      "name": "Git & CI/CD",
+      "category": "tools",
+      "level": "proficient"
+    }
+  ],
+  "stations": [
+    {
+      "id": "station-01-about-me",
+      "order": 1,
+      "title": "About Me & Executive Profile",
+      "organization": "Daliparthy Ravi Krishna Charan",
+      "location": "Hyderabad, India",
+      "period": "2020 – Present",
+      "type": "about",
+      "summary": "Software engineer and AI researcher focused on deep learning systems, full-stack architectures, and high-performance applications with peer-reviewed publications.",
+      "highlights": [
+        "Published researcher in seismic deep learning at IIT ISM Dhanbad SME-2025.",
+        "National AI/ML Hackathon 2026 Finalist hosted by IIT Tirupati and Ministry of Panchayati Raj (Selected: 40 out of 400 teams, Top 10%).",
+        "B.Tech in Information and Communication Technology at SASTRA Deemed University (8.5444 CGPA, Top 10%).",
+        "Systems builder across AI Resume Optimizer, AI Technical Interview Coach, and Expense Tracker PWA."
+      ],
+      "metrics": [
+        "CGPA: 8.5444 (Top 10%)",
+        "Publications: 1 Peer-Reviewed",
+        "Hackathon Finalist: 40 out of 400 Teams (Top 10%)"
+      ],
+      "skillIds": [
+        "python",
+        "typescript",
+        "react",
+        "fastapi",
+        "dsa"
+      ],
+      "links": [
+        {
+          "label": "GitHub Repositories",
+          "url": "https://github.com/ravidaliparthy",
+          "type": "github"
+        },
+        {
+          "label": "LinkedIn Profile",
+          "url": "https://linkedin.com/in/ravi-daliparthy",
+          "type": "external"
+        }
+      ],
+      "qa": [
+        {
+          "question": "Who is Daliparthy Ravi Krishna Charan?",
+          "answer": "I am a software engineer and AI researcher specializing in deep learning architectures, full-stack web applications, and distributed edge systems with peer-reviewed research."
+        },
+        {
+          "question": "What is your primary engineering philosophy?",
+          "answer": "Production-first engineering: AI systems must be deterministic, measurable, latency-optimized, and backed by mathematical rigor rather than speculative prototypes."
+        },
+        {
+          "question": "What technologies make up your primary tech stack?",
+          "answer": "Python, PyTorch, TypeScript, React, Next.js, Three.js, Cloudflare Workers AI, Node.js, Tailwind CSS, PostgreSQL, SQLite (Turso), and Docker."
+        },
+        {
+          "question": "What kind of engineering roles are you targeting?",
+          "answer": "Full-Stack Software Engineer, Machine Learning / AI Systems Engineer, and Applied Deep Learning Research roles."
+        }
+      ],
+      "mood": "dawn",
+      "biome": "meadows",
+      "ticket": {
+        "from": "ORIGIN",
+        "to": "STN 01: ABOUT ME",
+        "class": "EXECUTIVE FIRST",
+        "seat": "CAR-01",
+        "fare": "COMPLIMENTARY PASS"
+      },
+      "guideLines": [
+        "Welcome aboard! I am Charan, your journey conductor.",
+        "Here at Station 1, explore my executive profile, research philosophy, and technical focus.",
+        "Take a look at the verified metrics, and let's ride onward through each milestone!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Executive Bio & Engineering Portfolio Profile"
+      },
+      "cameraBookmark": [
+        0,
+        0.05,
+        12,
+        48
+      ]
+    },
+    {
+      "id": "station-02-narayana",
+      "order": 2,
+      "title": "Intermediate Education (MPC)",
+      "organization": "Narayana Junior College",
+      "location": "Hyderabad, India",
+      "period": "Apr 2020 – Jun 2022",
+      "type": "education",
+      "summary": "Completed foundational intermediate education in Mathematics, Physics, and Chemistry, graduating with high distinction.",
+      "highlights": [
+        "Achieved 97.8% overall score in Mathematics, Physics, and Chemistry curriculum.",
+        "Secured 90.4 percentile in JEE, establishing rigorous analytical and problem-solving foundation."
+      ],
+      "metrics": [
+        "Score: 97.8%",
+        "JEE Score: 90.4%ile"
+      ],
+      "skillIds": [
+        "mathematics",
+        "physics",
+        "chemistry"
+      ],
+      "links": [],
+      "qa": [
+        {
+          "question": "What foundational preparation occurred at Narayana?",
+          "answer": "Mastered foundational calculus, linear algebra, coordinate geometry, and mechanics with 97.8%, establishing the mathematical rigor applied today in machine learning."
+        },
+        {
+          "question": "How does this coursework translate into your machine learning work?",
+          "answer": "Deep learning backpropagation relies directly on multivariable chain rule differentiation, matrix decomposition, and gradient optimization mastered during this period."
+        },
+        {
+          "question": "What distinction did you graduate with?",
+          "answer": "Graduated with 97.8% overall score in Mathematics, Physics, and Chemistry (MPC) from Narayana Junior College in Hyderabad, India."
+        }
+      ],
+      "mood": "day",
+      "biome": "meadows",
+      "ticket": {
+        "from": "ABOUT ME",
+        "to": "STN 02: NARAYANA",
+        "class": "STANDARD SLEEPER",
+        "seat": "CAR-02",
+        "fare": "ACADEMIC TRANSIT"
+      },
+      "guideLines": [
+        "Welcome to Narayana Station! This milestone marks intensive study in analytical mathematics and physics.",
+        "Graduating with a 97.8% distinction built the calculus and linear algebra backbone that powers our deep learning work.",
+        "Next stop: SASTRA Deemed University, where engineering takes off!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Board of Intermediate Education Certificate (MPC 97.8%) & JEE Score (90.4%ile)"
+      },
+      "cameraBookmark": [
+        0.08,
+        0.06,
+        11.5,
+        46
+      ]
+    },
+    {
+      "id": "station-03-sastra",
+      "order": 3,
+      "title": "B.Tech in Information & Communication Technology",
+      "organization": "SASTRA Deemed University",
+      "location": "Thanjavur, India",
+      "period": "Jul 2022 – Jun 2026",
+      "type": "education",
+      "summary": "Pursuing B.Tech in ICT maintaining an 8.5444 CGPA, ranking in the top 10% of the cohort with advanced coursework across AI, systems, and algorithms.",
+      "highlights": [
+        "Maintained an 8.5444 CGPA, consistently ranking in the top 10% of the ICT engineering department.",
+        "Completed comprehensive coursework in Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, and Machine Learning."
+      ],
+      "metrics": [
+        "CGPA: 8.5444",
+        "Class Rank: Top 10%"
+      ],
+      "skillIds": [
+        "c_cpp",
+        "java",
+        "sql",
+        "dsa"
+      ],
+      "links": [],
+      "qa": [
+        {
+          "question": "What is the primary focus of the ICT degree at SASTRA?",
+          "answer": "Bridging low-level systems engineering (C/C++, computer networks, OS) with modern software architectures, algorithms, and applied machine learning systems."
+        },
+        {
+          "question": "What is your academic standing at SASTRA?",
+          "answer": "Maintained an 8.5444 CGPA, consistently ranking in the top 10% of the cohort in the School of Computing."
+        },
+        {
+          "question": "What core computer science topics were mastered?",
+          "answer": "Advanced Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, and Theory of Computation."
+        }
+      ],
+      "mood": "day",
+      "biome": "meadows",
+      "ticket": {
+        "from": "NARAYANA",
+        "to": "STN 03: SASTRA UNIV",
+        "class": "FIRST CLASS",
+        "seat": "CAR-03",
+        "fare": "CAMPUS PASS"
+      },
+      "guideLines": [
+        "We are pulling into SASTRA University Station! Here, deep computer science theory transforms into practical engineering.",
+        "Ranking in the top 10% with an 8.5444 CGPA while leading student societies and conducting published research.",
+        "Clear the tracks! We are heading toward student leadership and workshop mentoring."
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Official Academic Transcript (SASTRA Deemed University, CGPA 8.5444)"
+      },
+      "cameraBookmark": [
+        -0.06,
+        0.05,
+        12,
+        48
+      ]
+    },
+    {
+      "id": "station-04-leadership",
+      "order": 4,
+      "title": "President & Technical Leadership",
+      "organization": "SASTRA Maths Club & Robotics Club",
+      "location": "Thanjavur, India",
+      "period": "Aug 2023 – Present",
+      "type": "leadership",
+      "summary": "Elected President of SASTRA Maths Club and core member for Daksh Workshops, organizing 8+ events and managing student initiatives with 200+ attendee strength.",
+      "highlights": [
+        "Elected President of SASTRA Mathematics Club, spearheading university competitions and student initiatives.",
+        "Organized Daksh workshops, managing event operations and technical logistics for 200+ attendee strength.",
+        "Organized 8+ events and guided junior student cohorts with foundational mentorship."
+      ],
+      "metrics": [
+        "Managed Events: 200+ Strength",
+        "Events Organized: 8+",
+        "Club Leadership: President"
+      ],
+      "skillIds": [
+        "python",
+        "dsa"
+      ],
+      "links": [],
+      "qa": [
+        {
+          "question": "What did leadership in the Maths Club and Daksh entail?",
+          "answer": "Organizing 8+ university events, coordinating workshop operations, and managing logistics for attendee cohorts with 200+ strength."
+        },
+        {
+          "question": "What was your contribution to Daksh Workshops?",
+          "answer": "Served as a core member for Daksh Workshops, managing technical logistics and attendee support for university initiatives."
+        },
+        {
+          "question": "How has leadership experience shaped your engineering approach?",
+          "answer": "It developed clear technical communication, cross-functional collaboration, and effective mentorship for team members."
+        }
+      ],
+      "mood": "day",
+      "biome": "forest",
+      "ticket": {
+        "from": "SASTRA UNIV",
+        "to": "STN 04: LEADERSHIP",
+        "class": "CREW CONDUCTOR",
+        "seat": "CAB-01",
+        "fare": "HONORARY BADGE"
+      },
+      "guideLines": [
+        "Welcome to Leadership Junction! Community leadership and mentoring define strong engineering cultures.",
+        "As Maths Club President and Daksh coordinator, Charan organized 8+ events and managed operations for 200+ attendee strength.",
+        "Hold on tight—we are transitioning into the rugged GeoAI canyon for drone computer vision!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "SASTRA Student Affairs Appointment Records & Daksh Committee Verification"
+      },
+      "cameraBookmark": [
+        0.15,
+        0.1,
+        13,
+        50
+      ]
+    },
+    {
+      "id": "station-05-drone-rooftop",
+      "order": 5,
+      "title": "Rooftop Material Segmentation from Drone Imagery",
+      "organization": "Applied GeoAI & Computer Vision Research",
+      "location": "Nacala, Mozambique (Dataset Study)",
+      "period": "Aug 2024 – Nov 2024",
+      "type": "project",
+      "summary": "Engineered deep learning segmentation pipelines classifying rooftop materials across 17,954 building footprints using high-resolution drone imagery.",
+      "highlights": [
+        "Trained multi-spectral U-Net and DeepLabV3+ segmentation architectures on drone aerial orthomosaics spanning 17,954 building polygons.",
+        "Classified thatch, corrugated metal, concrete, and ceramic tile with 91.4% mIoU accuracy under extreme illumination variation.",
+        "Extracted spatial socio-economic vulnerability indicators for automated humanitarian disaster resilience mapping."
+      ],
+      "metrics": [
+        "Buildings Analyzed: 17,954",
+        "mIoU Accuracy: 91.4%",
+        "Pipeline: PyTorch & OpenCV"
+      ],
+      "skillIds": [
+        "python",
+        "tensorflow",
+        "opencv",
+        "scikit_learn"
+      ],
+      "links": [
+        {
+          "label": "GitHub Repository",
+          "url": "https://github.com/ravidaliparthy/Deep-Learning-Approaches-for-Urban-Building-Footprint-Extraction-and-Rooftop-Material-Mapping",
+          "type": "github"
+        }
+      ],
+      "qa": [
+        {
+          "question": "Why was semantic segmentation on drone imagery challenging?",
+          "answer": "Extreme shadow angles, reflective metallic glare, and irregular informal settlement roof boundaries required specialized data augmentation and dice-focal loss tuning."
+        },
+        {
+          "question": "What dataset and volume of buildings were processed?",
+          "answer": "Processed high-resolution aerial drone ortho-imagery categorizing 17,954 building footprints across Nacala, Mozambique by roofing material."
+        },
+        {
+          "question": "What accuracy metrics were achieved?",
+          "answer": "Achieved a 91.4% mean Intersection over Union (mIoU) score using PyTorch convolutional segmentation pipelines with custom loss functions."
+        },
+        {
+          "question": "What was the real-world humanitarian application?",
+          "answer": "The classifications assisted disaster response planners and municipal agencies in identifying cyclone-vulnerable informal roofing structures before monsoon seasons."
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Severe 56:1 Class Imbalance",
+          "realityAndContext": "In dense informal settlements, corrugated metal sheet roofs heavily dominate the terrain (9,776 buildings) while high-vulnerability materials like concrete (174) and asbestos (394) are rare.",
+          "theObstacle": "Standard Binary Cross-Entropy loss treated rare building materials as statistical noise and collapsed into predicting the dominant metal class for every structure.",
+          "decisionAndTradeoff": "Mathematically formulated a dual-head hybrid loss combining class-weighted focal loss with soft Dice coefficients, explicitly penalizing rare-class misclassifications over background.",
+          "outcomeMetric": "0.867 IoU benchmark achieved across 17,954 annotated structures"
+        },
+        {
+          "title": "Touching Buildings in Dense Informal Settlements",
+          "realityAndContext": "Informal settlement structures are built so close together that their rooftops physically touch, making it difficult for public health mappers to count distinct dwellings.",
+          "theObstacle": "Standard semantic segmentation models merge touching polygons into single large blobs, completely failing building instance counting.",
+          "decisionAndTradeoff": "Engineered a Deep Ordinal Watershed (DOW) architecture with dual heads: one head predicts semantic material masks while the second predicts instance boundary separation gradients.",
+          "outcomeMetric": "Zero polygon merging across touching rooftop clusters"
+        }
+      ],
+      "mood": "golden",
+      "biome": "canyon",
+      "ticket": {
+        "from": "LEADERSHIP",
+        "to": "STN 05: GEO-AI CANYON",
+        "class": "EXPEDITION CLASS",
+        "seat": "SURV-05",
+        "fare": "AERIAL PASS"
+      },
+      "guideLines": [
+        "Observe the canyon below! This station features drone-based deep learning segmentation over Nacala, Mozambique.",
+        "17,954 building footprints were accurately categorized by rooftop material to assist climate resilience and humanitarian planning.",
+        "We are now ascending into the high alpine mountain pass. Prepare for snow and sub-zero seismic deep learning!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Project Technical Report & Research Dataset Artifacts (Nacala Drone Orthomosaic)"
+      },
+      "cameraBookmark": [
+        0,
+        0.12,
+        13.5,
+        50
+      ]
+    },
+    {
+      "id": "station-06-iit-dhanbad-seismic",
+      "order": 6,
+      "title": "Intelligent Seismic Activity Detection: Deep Learning Approach",
+      "organization": "IIT ISM Dhanbad (SME-2025 Conference)",
+      "location": "Dhanbad, Jharkhand, India",
+      "period": "Sep 2024 – Jan 2025",
+      "type": "research",
+      "summary": "Sole primary author on peer-reviewed research accepted and presented at SME-2025 (IIT ISM Dhanbad), benchmarking deep neural network cross-region transferability across Southern California, Chile, and Hindukush seismic catalogs.",
+      "highlights": [
+        "Authored peer-reviewed paper 'Intelligent Seismic Activity Detection: A Deep Learning Approach' accepted & presented at SME-2025 (IIT ISM Dhanbad).",
+        "Formulated geophysical feature extraction incorporating Gutenberg-Richter a/b values, energy release rates, recurrence intervals, and magnitude deficits for M > 5.0 forecasting.",
+        "Achieved 99.05% in-sample accuracy and systematically benchmarked multi-regime cross-transferability across 3 disparate tectonic catalogs."
+      ],
+      "metrics": [
+        "In-Sample Accuracy: 99.05%",
+        "Publication: SME-2025 (IIT Dhanbad)",
+        "Regimes: 3 Tectonic Catalogs"
+      ],
+      "skillIds": [
+        "python",
+        "pytorch",
+        "scikit_learn"
+      ],
+      "links": [
+        {
+          "label": "GitHub Repository & Research Code",
+          "url": "https://github.com/ravidaliparthy/seismic-activity-prediction",
+          "type": "github"
+        }
+      ],
+      "qa": [
+        {
+          "question": "What was the core research problem explored in the SME-2025 paper?",
+          "answer": "Investigated whether deep neural networks for earthquake forecasting generalize across tectonically disparate regimes (Southern California, Chile, Hindukush) or overfit regional catalog idiosyncrasies."
+        },
+        {
+          "question": "What geophysical features were extracted for modeling?",
+          "answer": "Derived Gutenberg-Richter a and b values, cumulative seismic energy release rates, recurrence time intervals, and magnitude deficits to forecast major events (M > 5.0)."
+        },
+        {
+          "question": "Where was this research presented and accepted?",
+          "answer": "Peer-reviewed and presented at the International Conference on Sustainable Mining & Energy (SME-2025), hosted by the Indian Institute of Technology (ISM) Dhanbad."
+        },
+        {
+          "question": "What were the key quantitative findings?",
+          "answer": "Demonstrated 99.05% in-sample detection accuracy while discovering concrete cross-region transferability bounds between continental strike-slip faults and subduction zones."
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Cross-Region Tectonic Transferability vs Catalog Overfitting",
+          "realityAndContext": "Seismic catalogs differ dramatically across fault mechanisms (strike-slip in California vs subduction in Chile vs deep mantle in Hindukush).",
+          "theObstacle": "Deep models trained on a single catalog achieved high in-sample metrics but degraded significantly when transferred across different tectonic stress regimes.",
+          "decisionAndTradeoff": "Standardized feature engineering with Gutenberg-Richter parameterization and energy release rates, benchmarking transfer gaps to quantify regime-specific variance.",
+          "outcomeMetric": "99.05% in-sample accuracy and multi-regime transferability evaluation"
+        }
+      ],
+      "mood": "dusk",
+      "biome": "snow",
+      "ticket": {
+        "from": "GEO-AI CANYON",
+        "to": "STN 06: ALPINE SEISMIC",
+        "class": "RESEARCH SLEEPER",
+        "seat": "OBS-06",
+        "fare": "CONFERENCE TICKET"
+      },
+      "guideLines": [
+        "Welcome to the Snowy Alpine Pass of IIT ISM Dhanbad! The cold mountain air mirrors the intense mathematical rigor of seismic exploration.",
+        "Here Charan presented peer-reviewed research on cross-region seismic forecasting using Gutenberg-Richter geophysics.",
+        "Descending down from the snow peaks across the coastal viaduct toward production software systems!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "SME-2025 Acceptance Letter & Conference Proceedings (IIT ISM Dhanbad)"
+      },
+      "cameraBookmark": [
+        -0.12,
+        0.08,
+        12.5,
+        48
+      ]
+    },
+    {
+      "id": "station-07-expense-tracker",
+      "order": 7,
+      "title": "Expense Tracker PWA & Financial Analytics",
+      "organization": "Production Full-Stack Application",
+      "location": "Cloud Deployed",
+      "period": "Jan 2025 – Present",
+      "type": "project",
+      "summary": "Built an offline-first financial analytics Progressive Web App with real-time multi-currency tracking, Turso SQLite synchronization, and interactive DAX/PowerBI reporting.",
+      "highlights": [
+        "Live production deployment on Vercel with sub-100ms cold-start query latency.",
+        "Engineered offline-first local persistence utilizing indexed SQLite/Turso Edge databases.",
+        "Integrated interactive category drill-downs, burn-rate forecasts, and automated monthly tax ledger export."
+      ],
+      "metrics": [
+        "Live URL: Active",
+        "Latency: <100ms",
+        "Architecture: Offline-First PWA"
+      ],
+      "skillIds": [
+        "typescript",
+        "react",
+        "angular",
+        "sqlite",
+        "powerbi"
+      ],
+      "links": [
+        {
+          "label": "Live Web App",
+          "url": "https://expense-tracker-ochre-eight-80.vercel.app/",
+          "type": "live"
+        },
+        {
+          "label": "GitHub Source",
+          "url": "https://github.com/ravidaliparthy/Expense-Tracker",
+          "type": "github"
+        }
+      ],
+      "qa": [
+        {
+          "question": "How does the app handle offline data synchronization?",
+          "answer": "Uses local IndexedDB caching synced with Turso SQLite replicas via bidirectional CRDT conflict resolution and service worker background sync."
+        },
+        {
+          "question": "What is the tech stack powering this PWA?",
+          "answer": "React, TypeScript, Tailwind CSS, Turso LibSQL SQLite database at the edge, and automated CI/CD continuous deployment on Vercel."
+        },
+        {
+          "question": "What performance metrics does the system achieve?",
+          "answer": "Sub-100ms cold loads, 100/100 Lighthouse PWA capability, and instant optimistic UI mutations with zero perceived network latency."
+        }
+      ],
+      "challenges": [
+        {
+          "title": "The Ephemeral Free-Tier Container Challenge",
+          "realityAndContext": "Cloud containers on platforms like Render go to sleep after 15 minutes of user inactivity and wipe local storage upon every restart and deployment.",
+          "theObstacle": "A standalone SQLite database loses all registered user accounts and expense logs on server reboot, while making remote cloud database calls introduces sluggish network latency.",
+          "decisionAndTradeoff": "Engineered a Two-Phase Cold-Start Hydration pipeline: Phase 1 synchronously pulls active metadata and 2,000 transactions in <300ms for sub-second server boot, while Phase 2 streams older historical records in the background, paired with write-through Turso cloud persistence and a durable local outbox.",
+          "outcomeMetric": "Render health check boots in <1 second with 100% durable cloud persistence"
+        },
+        {
+          "title": "Cross-Origin Third-Party Cookie Blocking",
+          "realityAndContext": "Modern privacy engines in Safari, Firefox, and Chrome block third-party cross-site cookies between decoupled origins (*.vercel.app frontend and *.onrender.com backend).",
+          "theObstacle": "Storing authentication in httpOnly cookies resulted in silent session dropouts for users unless paying for custom unified apex domain routing.",
+          "decisionAndTradeoff": "Architected authentication using client-side JWTs in Authorization: Bearer headers, protected by Angular's strict DomSanitizer and offline-first PWA inspection.",
+          "outcomeMetric": "Flawless offline-first airplane-mode hydration with zero cross-site cookie drops"
+        }
+      ],
+      "mood": "day",
+      "biome": "viaduct",
+      "ticket": {
+        "from": "ALPINE SEISMIC",
+        "to": "STN 07: VIADUCT PWA",
+        "class": "EXPRESS BUSINESS",
+        "seat": "PWA-07",
+        "fare": "LIVE TRANSIT"
+      },
+      "guideLines": [
+        "Look outside as we glide over the high viaduct! This station showcases the Expense Tracker Progressive Web App.",
+        "It is completely live and deployed on Vercel, providing instant financial analytics and Turso SQLite synchronisation.",
+        "Moving along the coastline to inspect distributed edge computing with Cloudflare Workers AI!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Live Production Deployment (expense-tracker-ochre-eight-80.vercel.app) & GitHub Repo"
+      },
+      "cameraBookmark": [
+        0.1,
+        0.06,
+        12,
+        48
+      ]
+    },
+    {
+      "id": "station-08-resume-agent",
+      "order": 8,
+      "title": "Resume Agent – AI Resume Optimizer",
+      "organization": "Distributed Edge Computing",
+      "location": "Cloudflare Global Network",
+      "period": "Feb 2025 – Present",
+      "type": "project",
+      "summary": "Engineered an intelligent resume optimization engine running on Cloudflare Workers AI with Llama 3.3 70B for zero-hallucination ATS keyword alignment.",
+      "highlights": [
+        "Live production deployment serving edge requests via Cloudflare Workers AI with streaming responses.",
+        "Automates semantic diffing between job descriptions and technical candidate resumes with zero latency jitter.",
+        "Enforces strict JSON schema validation and hallucination guards on model completions."
+      ],
+      "metrics": [
+        "Edge Latency: <120ms Global",
+        "Engine: Llama 3.3 70B Instruct",
+        "Platform: Cloudflare Workers"
+      ],
+      "skillIds": [
+        "typescript",
+        "cloudflare_workers",
+        "nodejs",
+        "transformers"
+      ],
+      "links": [
+        {
+          "label": "Live Service",
+          "url": "https://resume-agent.ravidaliparthy.workers.dev",
+          "type": "live"
+        },
+        {
+          "label": "GitHub Source",
+          "url": "https://github.com/ravidaliparthy/resume-agent",
+          "type": "github"
+        }
+      ],
+      "qa": [
+        {
+          "question": "Why build on Cloudflare Workers AI?",
+          "answer": "Workers execute within 15ms at edge points-of-presence globally, offloading heavy Llama 3.3 70B inference to geographically adjacent GPUs without server management."
+        },
+        {
+          "question": "How do you prevent hallucinations in resume optimization?",
+          "answer": "Enforced strict Zod schema parsing, prompt boundary anchoring, and differential keyword extraction so the model strictly formats existing verified achievements."
+        },
+        {
+          "question": "What latency benchmarks does Resume Agent hit?",
+          "answer": "Maintains under 120ms global edge invocation latency with streamed chunked responses for instant user feedback."
+        }
+      ],
+      "challenges": [
+        {
+          "title": "LLM Cold-Start Latency & Edge Statefulness",
+          "realityAndContext": "Career optimization workflows require stateful multi-step document revisions while demanding instantaneous, sub-second user feedback.",
+          "theObstacle": "Traditional containerized LLMs take 3 to 5 seconds to boot cold instances, causing user drop-off.",
+          "decisionAndTradeoff": "Re-architected the pipeline onto Cloudflare Workers AI with Llama 3.3 70B and Durable Objects for distributed in-memory state coordination, eliminating server spin-up overhead.",
+          "outcomeMetric": "Edge responses achieved in <180ms with distributed session state"
+        }
+      ],
+      "mood": "golden",
+      "biome": "coast",
+      "ticket": {
+        "from": "VIADUCT PWA",
+        "to": "STN 08: EDGE WORKERS",
+        "class": "CLOUD CONDUCTOR",
+        "seat": "EDGE-08",
+        "fare": "SERVERLESS PASS"
+      },
+      "guideLines": [
+        "Here by the sunny coast, we stop at Resume Agent! A high-speed generative AI optimization tool.",
+        "Deployed globally on Cloudflare Workers AI, it runs Llama 3.3 70B inference at the edge with zero hallucinations.",
+        "Next up is real-time conversational AI: the AI Technical Interview Coach!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Live Production Edge Worker (resume-agent.ravidaliparthy.workers.dev) & Wrangler Config"
+      },
+      "cameraBookmark": [
+        0.05,
+        0.05,
+        11.5,
+        46
+      ]
+    },
+    {
+      "id": "station-09-ai-interviewer",
+      "order": 9,
+      "title": "AI Technical Interview Coach",
+      "organization": "Full-Stack Real-Time AI Platform",
+      "location": "Cloud Deployed",
+      "period": "Feb 2025 – Present",
+      "type": "project",
+      "summary": "Developed a real-time conversational technical interview platform featuring dynamic code execution, Groq-accelerated inference, and structured algorithmic rubrics.",
+      "highlights": [
+        "Production deployment powered by Next.js frontend, FastAPI backend, and ultra-fast Groq Llama 3.3 70B inference.",
+        "Simulates realistic Big-Tech coding and system design interviews with live syntax-aware feedback and complexity analysis.",
+        "Generates comprehensive post-interview diagnostic scorecards evaluating correctness, optimal big-O bounds, and communication."
+      ],
+      "metrics": [
+        "Tokens/Sec: 300+ on Groq",
+        "Stack: Next.js + FastAPI",
+        "Live URL: Active"
+      ],
+      "skillIds": [
+        "react",
+        "fastapi",
+        "python",
+        "typescript",
+        "dsa"
+      ],
+      "links": [
+        {
+          "label": "Live Coach Application",
+          "url": "https://ai-technical-interviewer-ashy.vercel.app/",
+          "type": "live"
+        },
+        {
+          "label": "GitHub Source",
+          "url": "https://github.com/ravidaliparthy/AI-technical-interviewer",
+          "type": "github"
+        }
+      ],
+      "qa": [
+        {
+          "question": "What makes the AI Technical Interviewer feel natural?",
+          "answer": "Sub-500ms time-to-first-token response speeds via Groq LPUs paired with multi-turn prompt state machines simulating senior engineering interviewers."
+        },
+        {
+          "question": "How does the system evaluate user code?",
+          "answer": "Analyzes Big-O time and space complexity, syntax correctness, edge-case coverage, and clean coding standards across multiple programming languages."
+        },
+        {
+          "question": "What problem does this solve for job candidates?",
+          "answer": "Provides realistic, high-pressure algorithmic mock interview simulations with granular diagnostic feedback on algorithmic trade-offs."
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Sub-Second Conversational Latency vs Deep PDF Resume Parsing",
+          "realityAndContext": "Simulating a high-bar tech interview (Google, Meta, OpenAI) requires instantaneous back-and-forth conversational feedback while thoroughly cross-examining candidate resumes.",
+          "theObstacle": "Standard LLM APIs lag under heavy prompt contexts, turning a conversational interview into an unnatural, halting experience.",
+          "decisionAndTradeoff": "Leveraged Groq LPU high-throughput hardware (500+ tok/s) paired with a decoupled FastAPI multi-language code execution sandbox and structured diagnostic scorecards.",
+          "outcomeMetric": "500+ tokens/sec sustained inference with live DSA code execution"
+        }
+      ],
+      "mood": "dusk",
+      "biome": "coast",
+      "ticket": {
+        "from": "EDGE WORKERS",
+        "to": "STN 09: AI INTERVIEWER",
+        "class": "INNOVATION CABIN",
+        "seat": "COACH-09",
+        "fare": "FULL-STACK TICKET"
+      },
+      "guideLines": [
+        "Welcome to the AI Technical Interview Coach station! You can test your algorithms right here against ultra-fast Groq inference.",
+        "It delivers conversational interview loops, evaluating Big-O runtime complexity and edge cases in real time.",
+        "Steaming into the mountain ridges for national hackathon honors!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Live Production Deployment (ai-technical-interviewer-ashy.vercel.app) & GitHub Repo"
+      },
+      "cameraBookmark": [
+        -0.08,
+        0.08,
+        12.5,
+        48
+      ]
+    },
+    {
+      "id": "station-10-hackathon-finalist",
+      "order": 10,
+      "title": "National AI/ML Hackathon 2026 Finalist",
+      "organization": "IIT Tirupati & Ministry of Panchayati Raj (MoPR)",
+      "location": "Tirupati, Andhra Pradesh, India",
+      "period": "Jan 2026 – Feb 2026",
+      "type": "achievement",
+      "summary": "Selected as national finalist (40 out of 400 teams, Top 10%) in the National AI/ML Hackathon hosted by IIT Tirupati and Ministry of Panchayati Raj for developing an automated rural land governance AI platform.",
+      "highlights": [
+        "Built an automated spatial segmentation and parcel dispute resolution platform for the Ministry of Panchayati Raj.",
+        "Selected among the top 40 finalist teams out of 400 competing teams nationwide (Top 10%) evaluated by senior ministry officials and premier IIT faculty.",
+        "Integrated multi-spectral satellite imagery with local land registry databases for verified title dispute prediction."
+      ],
+      "metrics": [
+        "Finalist Rank: 40 out of 400 Teams (Top 10%)",
+        "Organizers: IIT Tirupati & MoPR",
+        "Domain: GeoAI Governance"
+      ],
+      "skillIds": [
+        "python",
+        "tensorflow",
+        "opencv",
+        "fastapi"
+      ],
+      "links": [
+        {
+          "label": "GitHub Repository & Hackathon Code",
+          "url": "https://github.com/ravidaliparthy/IIT-Tirupati-Hackathon",
+          "type": "github"
+        }
+      ],
+      "qa": [
+        {
+          "question": "What problem did the Hackathon solution address?",
+          "answer": "Automated boundary conflict detection between agricultural survey plots and satellite imagery, helping rural gram panchayats resolve land disputes rapidly."
+        },
+        {
+          "question": "What was your standing in the national competition?",
+          "answer": "Selected among the top 40 finalist teams out of 400+ competing engineering colleges nationwide (top 10% national standing) at IIT Tirupati."
+        },
+        {
+          "question": "Which government body sponsored the challenge?",
+          "answer": "The challenge was sponsored by the Ministry of Panchayati Raj, Government of India, focusing on geospatial solutions for rural governance."
+        }
+      ],
+      "challenges": [
+        {
+          "title": "LiDAR Clutter in Bare-Earth DTM Generation",
+          "realityAndContext": "Under the national SVAMITVA Scheme, planning rural rainwater drainage requires clean elevation data, but raw drone LiDAR scans capture everything from rooftops to tree canopies.",
+          "theObstacle": "Surface clutter distorts terrain elevation gradients, causing classical hydrology models to predict water flowing uphill or pooling over house roofs.",
+          "decisionAndTradeoff": "Implemented a PointNet-style ground-filtering regression model (TerrainNet) that strips all vegetation and structures to extract a pure Digital Terrain Model (DTM) before running D8 flow-routing simulations.",
+          "outcomeMetric": "Accurate watershed delineation across 6 surveyed Indian village clusters"
+        },
+        {
+          "title": "Small Utility Detection Imbalance in Drone Orthophotos",
+          "realityAndContext": "Rural infrastructure maps require spotting critical small utilities (transformers, wells, overhead tanks) alongside massive roads and building clusters.",
+          "theObstacle": "Utility points occupy under 0.05% of orthophoto pixels, causing detectors to miss them completely in favor of vast building and road masks.",
+          "decisionAndTradeoff": "Pioneered a 3-model semantic segmentation ensemble (SegFormer + Mask2Former + dual-attention U-Net++) with class-specific confidence thresholds and minimum pixel cluster validation.",
+          "outcomeMetric": "Selected Top 10% (40 out of 400 national teams) by IIT Tirupati & MoPR"
+        }
+      ],
+      "mood": "golden",
+      "biome": "mountains",
+      "ticket": {
+        "from": "AI INTERVIEWER",
+        "to": "STN 10: IIT TIRUPATI HACK",
+        "class": "HONORS PARLOUR",
+        "seat": "GOLD-10",
+        "fare": "TOP 40 OF 400 (TOP 10%)"
+      },
+      "guideLines": [
+        "We have reached IIT Tirupati National Hackathon Station! Standing proud among the top 40 selected teams out of 400 nationwide (top 10%).",
+        "Competing against 400 teams, Charan built geospatial AI tools for the Ministry of Panchayati Raj to resolve rural land disputes.",
+        "All aboard for certifications, enterprise simulations, and industry internships!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Official Finalist Certificate (IIT Tirupati & Ministry of Panchayati Raj AI/ML Hackathon 2026)"
+      },
+      "cameraBookmark": [
+        0.12,
+        0.06,
+        12,
+        48
+      ]
+    },
+    {
+      "id": "station-11-certifications",
+      "order": 11,
+      "title": "Industry Training, Certifications & Internships",
+      "organization": "Matrimony.com, NilTech-Edu, TATA iQ & Sync Intern",
+      "location": "National & Global Programs",
+      "period": "2023 – 2025",
+      "type": "certification",
+      "summary": "Demonstrated technical versatility through selective corporate industry training programs, course certifications, enterprise data simulations, and applied software internships.",
+      "highlights": [
+        "Selected among the top 250 candidates from over 3,000 applicants across India for the 5-month Matrimorphosis Corporate Leadership industry training program (Matrimony.com) in enterprise software development and operational leadership.",
+        "Course Certification in Machine Learning from NilTech-Edu, mastering feature-engineering, statistical modeling, and predictive evaluation pipelines.",
+        "Completed TATA iQ Data Visualization and Generative AI job simulation covering enterprise predictive pipelines and analytics.",
+        "Software & Frontend Internships at Sync Intern and Bharat Intern, delivering responsive UI components and asynchronous DOM architectures."
+      ],
+      "metrics": [
+        "Matrimorphosis Program: Top 250 / 3,000+",
+        "Course Cert: NilTech-Edu ML",
+        "Internships: Sync & Bharat Intern"
+      ],
+      "skillIds": [
+        "mongodb",
+        "nodejs",
+        "powerbi",
+        "git",
+        "scikit_learn"
+      ],
+      "links": [
+        {
+          "label": "Matrimony System GitHub Repo",
+          "url": "https://github.com/ravidaliparthy/matrimony",
+          "type": "github"
+        },
+        {
+          "label": "GitHub Repositories",
+          "url": "https://github.com/ravidaliparthy",
+          "type": "github"
+        }
+      ],
+      "qa": [
+        {
+          "question": "What is Matrimorphosis and what was your standing?",
+          "answer": "Matrimorphosis was an intensive 5-month corporate software engineering leadership training by Matrimony.com; selected among the top 250 out of 3,000+ applicants."
+        },
+        {
+          "question": "What other industry certifications and simulations were completed?",
+          "answer": "NilTech-Edu Certified Machine Learning Professional, TATA iQ Data Engineering simulation, and full-stack software development internships at Sync Intern and Bharat Intern."
+        },
+        {
+          "question": "What practical skills were validated across these programs?",
+          "answer": "Enterprise feature extraction, relational database design, clean microservice architecture, and production machine learning model deployment."
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Enterprise Role-Based Access & Schema Integrity",
+          "realityAndContext": "Internal enterprise software must enforce strict separation between employee punch-ins and managerial audit reports without slowing down monthly reviews.",
+          "theObstacle": "Complex relational join queries on unindexed employee logs degrade dashboard responsiveness when rendering monthly summaries.",
+          "decisionAndTradeoff": "Engineered a normalized MySQL schema with indexed composite timestamps, paired with reactive Angular 16 Signals and Node/TypeScript REST middleware.",
+          "outcomeMetric": "Sub-millisecond query execution across enterprise employee attendance logs"
+        }
+      ],
+      "mood": "dusk",
+      "biome": "meadows",
+      "ticket": {
+        "from": "IIT TIRUPATI HACK",
+        "to": "STN 11: INDUSTRY TRAINING",
+        "class": "PROFESSIONAL CLUB",
+        "seat": "TRAIN-11",
+        "fare": "INDUSTRY COHORT"
+      },
+      "guideLines": [
+        "Welcome to Industry Training, Course Certifications & Internships Station! This milestone aggregates verified practical competencies across selective corporate training cohorts, course certifications, and software internships.",
+        "Featuring honors from Matrimorphosis (Matrimony.com 5-month leadership industry training program, Top 250 / 3,000+), NilTech-Edu ML Course Certification, TATA iQ, Sync Intern, and Bharat Intern across data engineering, full-stack, and ML.",
+        "Ring the bell! We are approaching the final destination: Hyderabad Grand Central Terminus!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Matrimorphosis Corporate Leadership Industry Training Program (Matrimony.com), NilTech-Edu ML Course Certificate, TATA iQ Simulation, Sync Intern & Bharat Intern Verification Letters"
+      },
+      "cameraBookmark": [
+        0,
+        0.05,
+        11,
+        46
+      ]
+    },
+    {
+      "id": "station-12-terminus",
+      "order": 12,
+      "title": "Terminus Station: Hyderabad Grand Central",
+      "organization": "Daliparthy Ravi Krishna Charan",
+      "location": "Hyderabad, Telangana, India",
+      "period": "2026 & Beyond",
+      "type": "achievement",
+      "summary": "Final destination concourse connecting technical recruiters, collaborators, and visitors directly to Charan via embedded live transmission.",
+      "highlights": [
+        "Available for Software Engineering, AI/ML Engineering, and Applied Research opportunities globally.",
+        "Direct email transmission concourse integrated with EmailJS service for immediate reach.",
+        "Complete engineering manifest, custom boarding pass generator, and source repository inspection."
+      ],
+      "metrics": [
+        "Status: Open for Roles",
+        "Base: Hyderabad, India",
+        "Mode: Hybrid / Remote / On-Site"
+      ],
+      "skillIds": [
+        "python",
+        "typescript",
+        "react",
+        "cloudflare_workers",
+        "dsa"
+      ],
+      "links": [
+        {
+          "label": "GitHub Developer Profile",
+          "url": "https://github.com/ravidaliparthy",
+          "type": "github"
+        },
+        {
+          "label": "Connect on LinkedIn",
+          "url": "https://linkedin.com/in/ravi-daliparthy",
+          "type": "external"
+        },
+        {
+          "label": "Direct Email",
+          "url": "mailto:ravidaliparthy@gmail.com",
+          "type": "external"
+        }
+      ],
+      "qa": [
+        {
+          "question": "What engineering roles is Ravi looking for?",
+          "answer": "Full-Stack Software Engineer, Machine Learning / AI Engineer, and Applied Deep Learning Research roles."
+        },
+        {
+          "question": "What makes Ravi a strong engineering candidate?",
+          "answer": "A rare combination of mathematical rigor (97.8% MPC, 8.5444 CGPA), peer-reviewed deep learning research (SME-2025), and practical full-stack distributed system deployments."
+        },
+        {
+          "question": "How quickly can we get in touch?",
+          "answer": "Immediately via the contact modal in this portfolio, email at ravidaliparthy@gmail.com, or directly through LinkedIn and GitHub."
+        },
+        {
+          "question": "Are your projects open source and verifiable?",
+          "answer": "Yes, all key codebases, research methodologies, and systems are publicly documented on GitHub at https://github.com/ravidaliparthy."
+        }
+      ],
+      "mood": "night",
+      "biome": "meadows",
+      "ticket": {
+        "from": "CERTIFICATIONS",
+        "to": "STN 12: HYD GRAND CENTRAL",
+        "class": "GRAND TERMINUS",
+        "seat": "VIP-12",
+        "fare": "WELCOME ABOARD"
+      },
+      "guideLines": [
+        "We have arrived at our final stop: Hyderabad Grand Central Terminus! What an incredible journey across all 12 milestones.",
+        "You can inspect the full technical specifications, send a direct transmission via the contact concourse, or generate your official boarding pass.",
+        "Thank you for riding the Central Milestone Express. Let's build the future together!"
+      ],
+      "source": {
+        "verifiedByOwner": true,
+        "documentReference": "Owner Master Portfolio Verification & Professional References"
+      },
+      "cameraBookmark": [
+        0,
+        0.18,
+        15,
+        52
+      ]
+    }
+  ]
+}

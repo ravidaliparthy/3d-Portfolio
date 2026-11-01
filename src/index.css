@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0d13;
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Runny, Ultra-Smooth Scrollbars for All Panels & Forms */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(4, 24, 15, 0.6);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.45);
+  border-radius: 9999px;
+  border: 1.5px solid rgba(4, 24, 15, 0.85);
+  transition: background 0.15s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.85);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #f59e0b;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* High-performance fluid native scrolling across all panels, frames and forms */
+.overflow-y-auto, .overflow-x-auto, [data-scrollable="true"] {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 158, 11, 0.5) rgba(4, 24, 15, 0.5);
+  user-select: text;
+}
+
+/* Strict Step 1 Performance: Remove all backdrop-filters above the canvas and isolate panels */
+*, *::before, *::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.contain-panel {
+  contain: layout paint;
+}
+
+/* Ensure text inside content areas and cards is comfortably selectable */
+aside, [role="dialog"], [role="region"], article, .selectable {
+  user-select: text;
+  contain: layout paint;
+}
+
+* {
+  scrollbar-gutter: auto;
+}
+
+

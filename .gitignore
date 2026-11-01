@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.chrome-test-profile/
+project-backup-pre-changes/
+*.log
+.DS_Store
+tsconfig.tsbuildinfo
