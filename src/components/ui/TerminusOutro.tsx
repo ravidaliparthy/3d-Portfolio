@@ -19,6 +19,8 @@ import {
   X,
   Sun,
   Moon,
+  Download,
+  FileText,
 } from 'lucide-react';
 
 export const TerminusOutro: React.FC = () => {
@@ -191,6 +193,39 @@ export const TerminusOutro: React.FC = () => {
                 <span>Souvenir Pass</span>
               </button>
 
+              {/* View Master Resume PDF */}
+              <a
+                href="/Daliparthy_Ravi_Krishna_Charan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-black transition-all cursor-pointer shadow-sm ${
+                  cardTheme === 'light'
+                    ? 'border-amber-500 bg-amber-400 text-slate-950 hover:bg-amber-300'
+                    : 'border-amber-400 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 hover:from-amber-300 hover:to-amber-400 shadow-md'
+                }`}
+                title="View verified master resume PDF in new tab"
+              >
+                <Eye className="h-4 w-4" />
+                <span>View Resume</span>
+              </a>
+
+              {/* Download Master Resume PDF */}
+              <a
+                href="/Daliparthy_Ravi_Krishna_Charan_Resume.pdf"
+                download="Daliparthy_Ravi_Krishna_Charan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-bold transition-all cursor-pointer shadow-sm ${
+                  cardTheme === 'light'
+                    ? 'border-emerald-500 bg-emerald-100 text-emerald-950 hover:bg-emerald-200'
+                    : 'border-emerald-500/40 bg-[#062417] text-emerald-300 hover:bg-[#0a3824] hover:text-white'
+                }`}
+                title="Download official PDF resume directly"
+              >
+                <Download className="h-4 w-4" />
+                <span>Download Resume</span>
+              </a>
+
               <button
                 onClick={() => useJourneyStore.getState().setPhase('journey')}
                 className={`flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-semibold transition-colors cursor-pointer shadow-sm ${
@@ -306,6 +341,50 @@ export const TerminusOutro: React.FC = () => {
                 }`}>
                   <MapPin className={`h-4 w-4 shrink-0 ${cardTheme === 'light' ? 'text-amber-600' : 'text-amber-400'}`} />
                   <span>{owner.location}</span>
+                </div>
+              </div>
+
+              {/* Official Resume View & Download Master Card */}
+              <div className={`rounded-2xl border p-3.5 transition-all shadow-sm ${
+                cardTheme === 'light'
+                  ? 'border-amber-400 bg-amber-50/90 text-slate-900 shadow-amber-500/10'
+                  : 'border-amber-400/50 bg-[#061e14] text-white shadow-inner'
+              }`}>
+                <div className="flex items-center gap-2 mb-2.5">
+                  <FileText className={`h-4 w-4 shrink-0 ${cardTheme === 'light' ? 'text-amber-700' : 'text-amber-400'}`} />
+                  <div>
+                    <span className={`text-[10px] font-mono font-bold uppercase tracking-wider block ${cardTheme === 'light' ? 'text-amber-800' : 'text-amber-300'}`}>
+                      Verified Credentials
+                    </span>
+                    <h3 className="text-xs font-black">Official Master Resume (PDF)</h3>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="/Daliparthy_Ravi_Krishna_Charan_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black py-2 px-2.5 text-xs transition-colors cursor-pointer shadow-xs"
+                    title="Open PDF directly in a new tab"
+                  >
+                    <Eye className="h-3.5 w-3.5" />
+                    <span>View Resume</span>
+                  </a>
+                  <a
+                    href="/Daliparthy_Ravi_Krishna_Charan_Resume.pdf"
+                    download="Daliparthy_Ravi_Krishna_Charan_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-center gap-1.5 rounded-xl border py-2 px-2.5 text-xs font-bold transition-colors cursor-pointer shadow-xs ${
+                      cardTheme === 'light'
+                        ? 'border-emerald-600 bg-emerald-50 hover:bg-emerald-100 text-emerald-950'
+                        : 'border-emerald-500/50 bg-[#092a1c] hover:bg-[#0e3d29] text-emerald-300 hover:text-white'
+                    }`}
+                    title="Download PDF to your computer"
+                  >
+                    <Download className="h-3.5 w-3.5" />
+                    <span>Download</span>
+                  </a>
                 </div>
               </div>
 
