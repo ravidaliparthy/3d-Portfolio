@@ -1,0 +1,187 @@
+{
+  "viewports": {
+    "1920x1080": {
+      "avgFps": 1,
+      "p1Fps": 0,
+      "avgFrameTime": "2144.3",
+      "maxHitchMs": "16.6",
+      "calls": 360,
+      "triangles": 186110,
+      "textures": 31,
+      "heapMb": 17.2
+    },
+    "768x1024": {
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "620.8",
+      "maxHitchMs": "16.6",
+      "calls": 322,
+      "triangles": 183796,
+      "textures": 31,
+      "heapMb": 20.6
+    },
+    "844x390": {
+      "avgFps": 2,
+      "p1Fps": 1,
+      "avgFrameTime": "408.1",
+      "maxHitchMs": "16.6",
+      "calls": 372,
+      "triangles": 187066,
+      "textures": 31,
+      "heapMb": 19.1
+    }
+  },
+  "stationViews": {
+    "stn1_chase": {
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "826.1",
+      "maxHitchMs": "16.6",
+      "calls": 363,
+      "triangles": 186182,
+      "textures": 31,
+      "heapMb": 21.2
+    },
+    "stn4_chase": {
+      "avgFps": 2,
+      "p1Fps": 0,
+      "avgFrameTime": "727.9",
+      "maxHitchMs": "1072.2",
+      "calls": 317,
+      "triangles": 183577,
+      "textures": 32,
+      "heapMb": 19.2
+    },
+    "stn5_cab": {
+      "avgFps": 2,
+      "p1Fps": 1,
+      "avgFrameTime": "438.5",
+      "maxHitchMs": "132.9",
+      "calls": 146,
+      "triangles": 170271,
+      "textures": 37,
+      "heapMb": 31.4
+    },
+    "stn8_chase": {
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "153.3",
+      "maxHitchMs": "527.6",
+      "calls": 286,
+      "triangles": 181201,
+      "textures": 32,
+      "heapMb": 29.8
+    },
+    "stn12_chase": {
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "635.0",
+      "maxHitchMs": "16.6",
+      "calls": 363,
+      "triangles": 186182,
+      "textures": 31,
+      "heapMb": 30.1
+    },
+    "stn12_cab": {
+      "avgFps": 2,
+      "p1Fps": 1,
+      "avgFrameTime": "650.4",
+      "maxHitchMs": "16.6",
+      "calls": 184,
+      "triangles": 172548,
+      "textures": 25,
+      "heapMb": 31.6
+    }
+  },
+  "switches": [
+    {
+      "name": "Full Features Baseline",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "479.2",
+      "maxHitchMs": "16.6",
+      "calls": 363,
+      "triangles": 186182,
+      "textures": 31,
+      "heapMb": 26.5
+    },
+    {
+      "name": "Particles Disabled (?particles=off)",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "452.9",
+      "maxHitchMs": "16.6",
+      "calls": 362,
+      "triangles": 186182,
+      "textures": 30,
+      "heapMb": 25.4
+    },
+    {
+      "name": "Legacy Square Particles (?particles=legacy)",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "559.1",
+      "maxHitchMs": "16.6",
+      "calls": 364,
+      "triangles": 186294,
+      "textures": 30,
+      "heapMb": 26.8
+    },
+    {
+      "name": "Post-Processing Disabled (?post=off)",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "241.2",
+      "maxHitchMs": "16.6",
+      "calls": 347,
+      "triangles": 186277,
+      "textures": 14,
+      "heapMb": 23.5
+    },
+    {
+      "name": "Glass Blur Disabled (?glass=off)",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "575.2",
+      "maxHitchMs": "16.6",
+      "calls": 363,
+      "triangles": 186182,
+      "textures": 31,
+      "heapMb": 24.4
+    },
+    {
+      "name": "DPR Capped to 1.0 (?dpr=1)",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "520.7",
+      "maxHitchMs": "16.6",
+      "calls": 363,
+      "triangles": 186182,
+      "textures": 31,
+      "heapMb": 23.8
+    },
+    {
+      "name": "Props Low Density (?props=low)",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "461.3",
+      "maxHitchMs": "16.6",
+      "calls": 363,
+      "triangles": 159142,
+      "textures": 31,
+      "heapMb": 25.7
+    },
+    {
+      "name": "Voice Modal Disabled (?voice=off)",
+      "avgFps": 1,
+      "p1Fps": 1,
+      "avgFrameTime": "608.2",
+      "maxHitchMs": "16.6",
+      "calls": 364,
+      "triangles": 186294,
+      "textures": 31,
+      "heapMb": 26.7
+    }
+  ],
+  "timestamp": "2026-11-01T16:46:43.057Z"
+}
