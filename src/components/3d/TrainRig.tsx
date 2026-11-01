@@ -414,18 +414,18 @@ export const TrainRig: React.FC = () => {
 
     } else {
       // 5. Chase View (Default trailing isometric camera with per-station custom bookmarks)
-      // Balanced 3/4 trailing isometric angle centered in the open stage
-      const chaseDist = isPortrait ? 9.2 : 11.2;
+      // Balanced 3/4 trailing isometric angle centered in the open stage with minimal roof occlusion
+      const chaseDist = isPortrait ? 11.5 : 14.8;
       const camOffsetVec = isPortrait
-        ? locoTangent.clone().multiplyScalar(-chaseDist).addScaledVector(locoRight, 2.0).addScaledVector(locoNormal, 3.8)
-        : locoTangent.clone().multiplyScalar(-chaseDist).addScaledVector(locoRight, 2.4).addScaledVector(locoNormal, 3.6);
+        ? locoTangent.clone().multiplyScalar(-chaseDist).addScaledVector(locoRight, 2.6).addScaledVector(locoNormal, 4.4)
+        : locoTangent.clone().multiplyScalar(-chaseDist).addScaledVector(locoRight, 3.8).addScaledVector(locoNormal, 4.6);
 
       camOffsetVec.multiplyScalar(freeLookZoom.current);
       camOffsetVec.applyAxisAngle(new THREE.Vector3(0, 1, 0), freeLookYaw.current);
       camOffsetVec.applyAxisAngle(locoRight, freeLookPitch.current * 0.5);
 
       baseCamPos.copy(locoPt).add(camOffsetVec);
-      baseLookAt.copy(locoPt).addScaledVector(locoTangent, 2.2).addScaledVector(locoNormal, 1.1);
+      baseLookAt.copy(locoPt).addScaledVector(locoTangent, 3.5).addScaledVector(locoNormal, 1.2);
 
       if (store.activeStation?.cameraBookmark) {
         const [bmYaw, bmPitch] = store.activeStation.cameraBookmark;
@@ -635,6 +635,21 @@ export const TrainRig: React.FC = () => {
           distance={38}
           color="#fef08a"
         />
+
+        {/* Soft Volumetric Atmospheric Headlight Beam Cone */}
+        {tier !== 'low' && (
+          <mesh position={[0, axleY + 0.95, 11.5]} rotation={[Math.PI / 2, 0, 0]}>
+            <coneGeometry args={[2.2, 15.0, 16, 1, true]} />
+            <meshBasicMaterial
+              color="#fef08a"
+              transparent
+              opacity={0.065}
+              blending={THREE.AdditiveBlending}
+              depthWrite={false}
+              side={THREE.DoubleSide}
+            />
+          </mesh>
+        )}
 
         {/* Steam Exhaust Particles */}
         <points ref={exhaustPointsRef} position={[0, axleY, 0]}>

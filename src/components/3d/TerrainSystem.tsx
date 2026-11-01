@@ -83,19 +83,16 @@ export const TerrainSystem: React.FC = () => {
       const naturalHeight = (lowHills + mediumDetail + mountainHeight) * stationFlatten;
 
       // Civil-Engineering Railway Right-of-Way Corridor:
-      // Track roadbed elevation: ground sits exactly 0.42m under track center
-      const trackBedY = closestPt.y - 0.42;
+      // Track roadbed elevation: ground sits exactly 0.38m under track center
+      const trackBedY = closestPt.y - 0.38;
 
-      // 1. Roadbed flat clearing: 18m wide corridor on each side (36m total flat width)
-      // Guarantees that at least one full grid polygon ring on each side sits at trackBedY.
-      const roadbedHalfWidth = 18.0;
-      const maxSlopeDist = 58.0;
+      // 1. Roadbed flat clearing: 8.5m wide corridor on each side (17m total flat ballast bed)
+      const roadbedHalfWidth = 8.5;
+      const maxSlopeDist = 36.0;
 
       // 2. Strict railway cutting envelope:
-      // The maximum allowable terrain height at distance `d` from the track
-      // Head-slope grade is capped at 0.32 (~17.7 degrees safe railway slope).
-      // This MATHEMATICALLY PREVENTS any polygon triangle from ever slicing above the rails!
-      const maxAllowedY = trackBedY + Math.max(0, (closestDist - roadbedHalfWidth) * 0.32);
+      // Smooth gradual transition capped at 0.26 (~14.5 degrees gentle railway grade).
+      const maxAllowedY = trackBedY + Math.max(0, (closestDist - roadbedHalfWidth) * 0.26);
 
       let terrainY = trackBedY + naturalHeight;
 
@@ -110,9 +107,9 @@ export const TerrainSystem: React.FC = () => {
         terrainY = Math.min(terrainY, maxAllowedY);
       }
 
-      // Hard clamp: anywhere within 25m, terrain can NEVER be higher than trackBedY + 1.2m
-      if (closestDist < 25.0) {
-        terrainY = Math.min(terrainY, trackBedY + Math.max(0, (closestDist - roadbedHalfWidth) * 0.25));
+      // Hard clamp: within 22m, terrain is gently bound below the clearance line
+      if (closestDist < 22.0) {
+        terrainY = Math.min(terrainY, trackBedY + Math.max(0, (closestDist - roadbedHalfWidth) * 0.22));
       }
 
       // River depression in coastal viaduct region

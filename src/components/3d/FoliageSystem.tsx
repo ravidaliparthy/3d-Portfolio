@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { journeyCurveManager } from './JourneyCurve';
 import { useJourneyStore } from '../../stores/useJourneyStore';
+import { getDebugSwitch } from '../../utils/debugSwitches';
 
 function getTerrainElevationY(worldX: number, worldZ: number, trackY: number, dist: number): number {
   const lowHills = Math.sin(worldX * 0.009 + worldZ * 0.007) * Math.cos(worldZ * 0.006) * 11.0;
@@ -22,11 +23,11 @@ function getTerrainElevationY(worldX: number, worldZ: number, trackY: number, di
     }
   }
   const naturalHeight = (lowHills + mediumDetail + mountainHeight) * stationFlatten;
-  const trackBedY = trackY - 0.42;
+  const trackBedY = trackY - 0.38;
 
-  const roadbedHalfWidth = 18.0;
-  const maxSlopeDist = 58.0;
-  const maxAllowedY = trackBedY + Math.max(0, (dist - roadbedHalfWidth) * 0.32);
+  const roadbedHalfWidth = 8.5;
+  const maxSlopeDist = 36.0;
+  const maxAllowedY = trackBedY + Math.max(0, (dist - roadbedHalfWidth) * 0.26);
 
   let terrainY = trackBedY + naturalHeight;
   if (dist <= roadbedHalfWidth) {
@@ -40,8 +41,8 @@ function getTerrainElevationY(worldX: number, worldZ: number, trackY: number, di
     terrainY = Math.min(terrainY, maxAllowedY);
   }
 
-  if (dist < 25.0) {
-    terrainY = Math.min(terrainY, trackBedY + Math.max(0, (dist - roadbedHalfWidth) * 0.25));
+  if (dist < 22.0) {
+    terrainY = Math.min(terrainY, trackBedY + Math.max(0, (dist - roadbedHalfWidth) * 0.22));
   }
 
   return terrainY;
@@ -57,14 +58,11 @@ export const FoliageSystem: React.FC = () => {
   const curve = journeyCurveManager.curve;
 
   const countPerType = useMemo(() => {
-    switch (tier) {
-      case 'low':
-        return { trees: 110, cacti: 65, alpine: 110, rocks: 95 };
-      case 'mid':
-      case 'high':
-      default:
-        return { trees: 260, cacti: 150, alpine: 260, rocks: 220 };
+    const isPropsLow = getDebugSwitch('props') === 'low';
+    if (isPropsLow || tier === 'low') {
+      return { trees: 110, cacti: 65, alpine: 110, rocks: 95 };
     }
+    return { trees: 260, cacti: 150, alpine: 260, rocks: 220 };
   }, [tier]);
 
   useLayoutEffect(() => {

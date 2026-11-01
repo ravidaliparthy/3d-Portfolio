@@ -19,34 +19,7 @@ export const TunnelAndMistSystem: React.FC = () => {
 
   return (
     <group name="tunnel-and-mist-system">
-      {/* 1. Mountain Tunnel Portal over track between Station 4 & Station 5 at Z ≈ 394 */}
-      <group position={[101, 7.0, 394]} rotation={[0, 0.28, 0]}>
-        {/* Left Masonry Portal Pier */}
-        <mesh position={[-3.2, 3.2, 0]} castShadow={tier === 'high'} receiveShadow>
-          <boxGeometry args={[1.6, 6.4, 2.2]} />
-          <meshStandardMaterial color="#334155" roughness={0.85} />
-        </mesh>
-
-        {/* Right Masonry Portal Pier */}
-        <mesh position={[3.2, 3.2, 0]} castShadow={tier === 'high'} receiveShadow>
-          <boxGeometry args={[1.6, 6.4, 2.2]} />
-          <meshStandardMaterial color="#334155" roughness={0.85} />
-        </mesh>
-
-        {/* Overhead Spanning Stone Arch Lintel */}
-        <mesh position={[0, 5.8, 0]} castShadow={tier === 'high'}>
-          <boxGeometry args={[8.0, 1.4, 2.4]} />
-          <meshStandardMaterial color="#1e293b" roughness={0.75} />
-        </mesh>
-
-        {/* Tunnel Keystone Inscription Badge */}
-        <mesh position={[0, 6.7, 1.25]}>
-          <boxGeometry args={[2.4, 0.6, 0.15]} />
-          <meshStandardMaterial color="#fbbf24" metalness={0.7} roughness={0.25} />
-        </mesh>
-      </group>
-
-      {/* 2. Coastal Viaduct Mist Banks at Z ≈ 580 */}
+      {/* 1. Coastal Viaduct Mist Banks at Z ≈ 580 */}
       <group ref={mistMeshRef} position={[120, 16, 580]}>
         {[...Array(tier === 'low' ? 2 : 4)].map((_, i) => (
           <mesh

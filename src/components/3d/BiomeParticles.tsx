@@ -3,6 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useJourneyStore } from '../../stores/useJourneyStore';
 import { journeyCurveManager } from './JourneyCurve';
+import { getDebugSwitch, isDebugDisabled } from '../../utils/debugSwitches';
 
 function getParticleCircleTexture(): THREE.Texture {
   if (typeof document === 'undefined') return new THREE.Texture();
@@ -25,8 +26,12 @@ function getParticleCircleTexture(): THREE.Texture {
 
 export const BiomeParticles: React.FC = () => {
   const tier = useJourneyStore((s) => s.tier);
+  const isOff = isDebugDisabled('particles');
+  const isLegacy = getDebugSwitch('particles') === 'legacy';
   const pointsRef = useRef<THREE.Points>(null);
-  const circleMap = useMemo(() => getParticleCircleTexture(), []);
+  const circleMap = useMemo(() => (isLegacy ? null : getParticleCircleTexture()), [isLegacy]);
+
+  if (isOff) return null;
 
   const particleCount = tier === 'low' ? 60 : tier === 'mid' ? 140 : 240;
 

@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import { useJourneyStore } from '../../stores/useJourneyStore';
 import { journeyCurveManager } from './JourneyCurve';
 import { portfolioData, type Mood } from '../../data';
+import { isDebugDisabled } from '../../utils/debugSwitches';
 
 interface MoodLightingConfig {
   sunColor: string;
@@ -283,7 +284,7 @@ export const EnvironmentRig: React.FC = () => {
         ref={sunRef}
         position={initialConfig.sunPosition}
         intensity={initialConfig.sunIntensity}
-        castShadow={tier === 'high'}
+        castShadow={!isDebugDisabled('shadows') && tier === 'high'}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-near={0.5}
