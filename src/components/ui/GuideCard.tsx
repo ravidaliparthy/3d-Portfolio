@@ -30,12 +30,17 @@ export const GuideCard: React.FC = React.memo(() => {
   const isContactModalOpen = useJourneyStore((s) => s.isContactModalOpen);
   const isRoadmapOpen = useJourneyStore((s) => s.isRoadmapOpen);
   const isRecruiterDrawerOpen = useJourneyStore((s) => s.isRecruiterDrawerOpen);
+  const isMoving = useJourneyStore((s) => s.isMoving);
+  const navigatingTargetIndex = useJourneyStore((s) => s.navigatingTargetIndex);
+
+  const isTraveling = isMoving || navigatingTargetIndex !== null;
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const userManuallyToggledRef = useRef(false);
 
-  // When ANY menu or modal is open, conductor MUST disappear immediately
+  // While travelling or when ANY menu/modal is open, conductor MUST disappear completely
   const isAnyMenuOrModalOpen =
+    isTraveling ||
     isMenuOpen ||
     isCameraMenuOpen ||
     isConductorModalOpen ||
@@ -63,6 +68,10 @@ export const GuideCard: React.FC = React.memo(() => {
   };
 
   useEffect(() => {
+    if (isTraveling) {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      return;
+    }
     userManuallyToggledRef.current = false;
     // Display conductor speech message upon arriving at any station and auto-collapse after 8s
     setGuideSpeechOpen(true);
@@ -71,7 +80,7 @@ export const GuideCard: React.FC = React.memo(() => {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [currentStationIndex, targetSpeech, setGuideSpeechOpen]);
+  }, [currentStationIndex, targetSpeech, isTraveling, setGuideSpeechOpen]);
 
   // Toggle button handler
   const handleToggleAvatar = (e: React.MouseEvent) => {
