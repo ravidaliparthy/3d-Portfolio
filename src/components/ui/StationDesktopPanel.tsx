@@ -99,15 +99,15 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
   return (
     <aside
       data-no-drag="true"
-      className={`pointer-events-auto fixed left-4 sm:left-6 top-[68px] z-20 flex w-[380px] sm:w-[410px] md:w-[420px] max-w-[calc(100vw-32px)] flex-col overflow-hidden rounded-2xl border-2 border-amber-400/60 ${isGlassOff ? 'bg-[#04180f]' : 'bg-[#04180f]/88 backdrop-blur-md'} text-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.15)] transition-[height] duration-300 ease-out ${heightClass}`}
+      className={`pointer-events-auto fixed left-4 sm:left-6 top-[68px] z-20 flex w-[400px] sm:w-[430px] md:w-[450px] max-w-[calc(100vw-32px)] flex-col overflow-hidden rounded-2xl border-2 border-amber-400/60 ${isGlassOff ? 'bg-[#04180f]' : 'bg-[#04180f]/90 backdrop-blur-md'} text-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.15)] transition-[height] duration-300 ease-out ${heightClass}`}
       aria-label={`Milestone Details: ${activeStation.title}`}
     >
       {/* Header - Perfectly Aligned, Uncongested Structure */}
       <div className="border-b border-amber-400/30 p-3.5 sm:p-4 bg-[#04180f]/80 shrink-0 space-y-2.5">
         
-        {/* Row 1: State/Station Badge (Left) + Viewport Height Switcher (Right) */}
+        {/* Row 1: State/Station Badge (Left) + Viewport Height Switcher & Share (Right) */}
         <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-1.5 shrink-0">
+          <div className="flex items-center gap-2 min-w-0">
             <button
               onClick={() => setRoadmapOpen(true)}
               className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-slate-950 shadow-sm hover:from-amber-300 hover:to-amber-400 transition-colors cursor-pointer group shrink-0"
@@ -118,26 +118,10 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
               <span>STN {currentStationIndex + 1}/{stations.length}</span>
             </button>
 
-            {navigatingTargetIndex !== null ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-950/90 border border-amber-400/80 px-2 py-0.5 text-[10px] font-mono font-bold text-amber-300 animate-pulse shadow-sm">
+            {navigatingTargetIndex !== null && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-950/90 border border-amber-400/80 px-2 py-0.5 text-[10px] font-mono font-bold text-amber-300 animate-pulse shadow-sm truncate">
                 <span>Traveling to STN {navigatingTargetIndex + 1}...</span>
               </span>
-            ) : currentStationIndex < stations.length - 1 ? (
-              <button
-                onClick={nextStation}
-                className="flex items-center gap-1 rounded-full border border-amber-400/60 bg-[#0a2419] hover:bg-amber-400 hover:text-slate-950 px-2.5 py-0.5 text-[10px] font-mono font-black text-amber-300 transition-all cursor-pointer shadow-xs"
-                title="Advance directly to Next Station"
-              >
-                <span>Next →</span>
-              </button>
-            ) : (
-              <button
-                onClick={() => useJourneyStore.getState().setPhase('terminus')}
-                className="flex items-center gap-1 rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 px-2.5 py-0.5 text-[10px] font-mono font-black text-slate-950 transition-all cursor-pointer shadow-xs"
-                title="Open Terminus Outro Board"
-              >
-                <span>Terminus 🏁</span>
-              </button>
             )}
           </div>
 
@@ -145,7 +129,7 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
             {/* Quick Milestone Deep Link Share Button */}
             <button
               onClick={handleShareTicket}
-              className="flex h-6 w-6 items-center justify-center rounded-lg border border-amber-400/40 bg-[#0a2419] text-amber-300 hover:bg-amber-400 hover:text-slate-950 transition-colors cursor-pointer"
+              className="flex h-7 w-7 items-center justify-center rounded-lg border border-amber-400/40 bg-[#0a2419] text-amber-300 hover:bg-amber-400 hover:text-slate-950 transition-colors cursor-pointer shrink-0"
               title={copied ? 'Link Copied!' : 'Copy deep link to this station'}
               aria-label="Share station deep link"
             >
