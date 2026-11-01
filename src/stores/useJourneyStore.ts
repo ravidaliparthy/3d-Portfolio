@@ -4,6 +4,7 @@ import { journeyCurveManager } from '../components/3d/JourneyCurve';
 
 export type JourneyPhase = 'loading' | 'intro' | 'boarding' | 'journey' | 'terminus';
 export type QualityTier = 'low' | 'mid' | 'high';
+export type QualityMode = 'auto' | 'low' | 'mid' | 'high';
 export type MobileSheetMode = 'peek' | 'expanded' | 'closed';
 export type PanelType = 'station' | 'qa' | 'ticket' | 'recruiter' | 'none';
 export type CameraMode = 'driver' | 'cinematic';
@@ -20,6 +21,9 @@ interface JourneyStore {
   // State machine
   phase: JourneyPhase;
   tier: QualityTier;
+  qualityMode: QualityMode;
+  reduceEffects: boolean;
+  isKeyboardHelpOpen: boolean;
   navigatingTargetIndex: number | null;
   
   // Progress & Movement
@@ -68,6 +72,9 @@ interface JourneyStore {
   // Actions
   setPhase: (phase: JourneyPhase) => void;
   setTier: (tier: QualityTier) => void;
+  setQualityMode: (mode: QualityMode) => void;
+  setReduceEffects: (reduce: boolean) => void;
+  setKeyboardHelpOpen: (open: boolean) => void;
   setProgress: (progress: number) => void;
   setTargetProgress: (target: number) => void;
   setVelocity: (velocity: number) => void;
@@ -108,9 +115,26 @@ interface JourneyStore {
 
 const stations = portfolioData.stations;
 
+const savedQualityMode =
+  (typeof window !== 'undefined'
+    ? (localStorage.getItem('portfolio_quality_mode') as QualityMode)
+    : null) || 'auto';
+const savedReduceEffects =
+  typeof window !== 'undefined' && localStorage.getItem('portfolio_reduce_effects') === 'true';
+
+const initialTier: QualityTier =
+  savedQualityMode === 'auto'
+    ? typeof window !== 'undefined' && window.innerWidth < 768
+      ? 'low'
+      : 'mid'
+    : savedQualityMode;
+
 export const useJourneyStore = create<JourneyStore>((set, get) => ({
   phase: 'intro',
-  tier: 'mid',
+  tier: initialTier,
+  qualityMode: savedQualityMode,
+  reduceEffects: savedReduceEffects,
+  isKeyboardHelpOpen: false,
   navigatingTargetIndex: null,
   
   progress: journeyCurveManager.getStationT(0),
@@ -178,6 +202,27 @@ export const useJourneyStore = create<JourneyStore>((set, get) => ({
   },
   
   setTier: (tier) => set({ tier }),
+  
+  setQualityMode: (mode) => {
+    try {
+      localStorage.setItem('portfolio_quality_mode', mode);
+    } catch (_) {}
+    if (mode === 'auto') {
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+      set({ qualityMode: 'auto', tier: isMobile ? 'low' : 'mid' });
+    } else {
+      set({ qualityMode: mode, tier: mode });
+    }
+  },
+
+  setReduceEffects: (reduce) => {
+    try {
+      localStorage.setItem('portfolio_reduce_effects', String(reduce));
+    } catch (_) {}
+    set({ reduceEffects: reduce });
+  },
+
+  setKeyboardHelpOpen: (open) => set({ isKeyboardHelpOpen: open }),
   
   setProgress: (progress) => {
     const clamped = Math.max(0, Math.min(1, progress));

@@ -14,6 +14,9 @@ import {
   Building2,
   Compass,
   FileText,
+  Sliders,
+  HelpCircle,
+  Zap,
 } from 'lucide-react';
 
 const CAMERA_VIEWS: { id: CameraPresetView; label: string; icon: React.FC<{ className?: string }> }[] = [
@@ -36,6 +39,12 @@ export const UnifiedMenuDropdown: React.FC = () => {
   const cameraPreset = useJourneyStore((s) => s.cameraPreset);
   const setCameraPreset = useJourneyStore((s) => s.setCameraPreset);
   const setPanelHeight = useJourneyStore((s) => s.setPanelHeight);
+  const qualityMode = useJourneyStore((s) => s.qualityMode);
+  const tier = useJourneyStore((s) => s.tier);
+  const setQualityMode = useJourneyStore((s) => s.setQualityMode);
+  const reduceEffects = useJourneyStore((s) => s.reduceEffects);
+  const setReduceEffects = useJourneyStore((s) => s.setReduceEffects);
+  const setKeyboardHelpOpen = useJourneyStore((s) => s.setKeyboardHelpOpen);
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -233,6 +242,63 @@ export const UnifiedMenuDropdown: React.FC = () => {
                   </button>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Graphics Quality & Performance Section */}
+          <div className="mt-2.5 pt-2 border-t border-amber-400/20 px-1">
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="text-[10px] font-mono uppercase text-slate-300 flex items-center gap-1 font-bold">
+                <Sliders className="h-3 w-3 text-amber-400" />
+                <span>Graphics Quality</span>
+              </span>
+              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">
+                {qualityMode === 'auto' ? `Auto (${tier})` : qualityMode}
+              </span>
+            </div>
+            <div className="grid grid-cols-4 gap-1 mb-2">
+              {(['auto', 'low', 'mid', 'high'] as const).map((mode) => {
+                const isSelected = qualityMode === mode;
+                return (
+                  <button
+                    key={mode}
+                    onClick={() => setQualityMode(mode)}
+                    className={`rounded-lg py-1 px-1 text-[9px] font-mono font-bold uppercase transition-all cursor-pointer text-center ${
+                      isSelected
+                        ? 'bg-amber-400 text-slate-950 font-black shadow-xs'
+                        : 'bg-[#05180f] text-slate-300 hover:bg-[#092c1a] hover:text-white border border-emerald-500/30'
+                    }`}
+                    title={`Set graphics tier to ${mode}`}
+                  >
+                    {mode}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Reduce Effects & Keyboard Shortcuts Actions */}
+            <div className="flex items-center gap-1.5 pt-1">
+              <button
+                onClick={() => setReduceEffects(!reduceEffects)}
+                className={`flex-1 flex items-center justify-center gap-1.5 rounded-lg py-1.5 px-2 text-[10px] font-mono font-bold transition-all cursor-pointer border ${
+                  reduceEffects
+                    ? 'bg-amber-400 text-slate-950 border-amber-400 font-black'
+                    : 'bg-[#05180f] text-slate-300 hover:text-white border-emerald-500/30'
+                }`}
+                title="Reduce complex post effects and cap resolution for maximum battery/frame rate"
+              >
+                <Zap className="h-3 w-3" />
+                <span>{reduceEffects ? 'Effects: Min' : 'Reduce FX'}</span>
+              </button>
+
+              <button
+                onClick={() => handleAction(() => setKeyboardHelpOpen(true))}
+                className="flex items-center justify-center gap-1 rounded-lg py-1.5 px-2.5 text-[10px] font-mono font-bold bg-[#05180f] text-amber-300 hover:bg-[#092c1a] hover:text-amber-200 transition-all cursor-pointer border border-amber-400/30"
+                title="View keyboard shortcut references"
+              >
+                <HelpCircle className="h-3 w-3" />
+                <span>Keys (?)</span>
+              </button>
             </div>
           </div>
         </div>

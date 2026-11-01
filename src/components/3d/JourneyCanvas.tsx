@@ -15,16 +15,21 @@ import { BiomeParticles } from './BiomeParticles';
 import { LivingDetails } from './LivingDetails';
 import { PerfSampler } from './PerfSampler';
 import { useJourneyStore } from '../../stores/useJourneyStore';
+import { getDebugSwitch, isDebugDisabled } from '../../utils/debugSwitches';
 
 export const JourneyCanvas: React.FC = () => {
   const tier = useJourneyStore((s) => s.tier);
+  const qualityMode = useJourneyStore((s) => s.qualityMode);
+  const reduceEffects = useJourneyStore((s) => s.reduceEffects);
   const setTier = useJourneyStore((s) => s.setTier);
   const [contextLost, setContextLost] = useState(false);
   const [canvasKey, setCanvasKey] = useState(0);
   const [dprTarget, setDprTarget] = useState(1.5);
 
+  const forceDpr1 = getDebugSwitch('dpr') === '1' || reduceEffects;
+  const shadowsOff = isDebugDisabled('shadows') || reduceEffects;
   const deviceDpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
-  const currentDpr = Math.max(1.0, Math.min(deviceDpr, dprTarget, 1.5));
+  const currentDpr = forceDpr1 ? 1.0 : Math.max(1.0, Math.min(deviceDpr, dprTarget, 1.5));
 
   useEffect(() => {
     const handleContextLost = (e: Event) => {
@@ -94,18 +99,23 @@ export const JourneyCanvas: React.FC = () => {
             // Non-blocking fallback
           }
         }}
-        shadows={tier === 'high'}
+        shadows={!shadowsOff && tier === 'high'}
       >
-        <PerformanceMonitor
-          onDecline={() => {
-            setDprTarget((prev) => Math.max(1.0, prev - 0.25));
-            if (tier === 'high') setTier('mid');
-            else if (tier === 'mid') setTier('low');
-          }}
-          onIncline={() => {
-            if (tier === 'low') setTier('mid');
-          }}
-        />
+        {qualityMode === 'auto' && (
+          <PerformanceMonitor
+            factor={1}
+            step={0.1}
+            onDecline={() => {
+              setDprTarget((prev) => Math.max(1.0, prev - 0.25));
+              if (tier === 'high') setTier('mid');
+              else if (tier === 'mid') setTier('low');
+            }}
+            onIncline={() => {
+              if (tier === 'low') setTier('mid');
+              else if (tier === 'mid') setTier('high');
+            }}
+          />
+        )}
 
         <Suspense fallback={null}>
           <EnvironmentRig />

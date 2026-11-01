@@ -16,7 +16,9 @@ import { TerritoryRoadmap } from './TerritoryRoadmap';
 import { ConductorBoardingDialog } from './ConductorBoardingDialog';
 import { CameraViewDropdown } from './CameraViewDropdown';
 import { VoiceAssistantModal } from './VoiceAssistantModal';
+import { KeyboardHelpModal } from './KeyboardHelpModal';
 import { Mic } from 'lucide-react';
+import { isDebugDisabled } from '../../utils/debugSwitches';
 
 export const NavigationOverlay: React.FC = () => {
   const phase = useJourneyStore((s) => s.phase);
@@ -140,6 +142,7 @@ export const NavigationOverlay: React.FC = () => {
         isOpen={isVoiceModalOpen}
         onClose={() => setVoiceModalOpen(false)}
       />
+      <KeyboardHelpModal />
 
       {/* ============================================================== */}
       {/* ZONE 1: TOP STRIP                                              */}
@@ -212,14 +215,16 @@ export const NavigationOverlay: React.FC = () => {
           <AudioToggle />
 
           {/* Quick Mic Shortcut Button */}
-          <button
-            onClick={() => setVoiceModalOpen(true)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-amber-400/50 bg-[#061e15] text-amber-300 shadow-md hover:bg-amber-400 hover:text-slate-950 transition-all cursor-pointer"
-            title="Ask by Voice (Microphone Shortcut)"
-            aria-label="Voice Assistant Shortcut"
-          >
-            <Mic className="h-4 w-4" />
-          </button>
+          {!isDebugDisabled('voice') && (
+            <button
+              onClick={() => setVoiceModalOpen(true)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-amber-400/50 bg-[#061e15] text-amber-300 shadow-md hover:bg-amber-400 hover:text-slate-950 transition-all cursor-pointer"
+              title="Ask by Voice (Microphone Shortcut)"
+              aria-label="Voice Assistant Shortcut"
+            >
+              <Mic className="h-4 w-4" />
+            </button>
+          )}
 
           {/* Camera View Switcher Menu */}
           <CameraViewDropdown />

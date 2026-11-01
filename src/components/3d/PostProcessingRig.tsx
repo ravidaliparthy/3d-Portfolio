@@ -2,6 +2,7 @@ import React, { Component, type ReactNode } from 'react';
 import { useThree } from '@react-three/fiber';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import { useJourneyStore } from '../../stores/useJourneyStore';
+import { isDebugDisabled } from '../../utils/debugSwitches';
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -35,10 +36,11 @@ class PostProcessingErrorBoundary extends Component<ErrorBoundaryProps, ErrorBou
 
 const PostProcessingContent: React.FC = () => {
   const tier = useJourneyStore((s) => s.tier);
+  const reduceEffects = useJourneyStore((s) => s.reduceEffects);
   const gl = useThree((s) => s.gl);
 
-  // Hard rule: low tier has ZERO post-processing overhead to ensure 60fps on mobile
-  if (tier === 'low') {
+  // Hard rule: low tier, reduceEffects, or ?post=off has ZERO post-processing overhead
+  if (tier === 'low' || reduceEffects || isDebugDisabled('post')) {
     return null;
   }
 

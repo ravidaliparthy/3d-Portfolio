@@ -3,6 +3,7 @@ import { useJourneyStore, type PanelHeight } from '../../stores/useJourneyStore'
 import { useViewport } from '../../hooks/useViewport';
 import { getSkillById } from '../../data';
 import { getPortfolioStateForStation } from './TerritoryRoadmap';
+import { isDebugDisabled } from '../../utils/debugSwitches';
 import {
   ExternalLink,
   HelpCircle,
@@ -81,10 +82,12 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
   // Responsive layout: Mobile portrait handled by StationMobileSheet
   if (isMobile && isPortrait) return null;
 
+  const isGlassOff = isDebugDisabled('glass');
+
   return (
     <aside
       data-no-drag="true"
-      className={`pointer-events-auto fixed left-4 sm:left-6 top-[68px] z-20 flex w-[380px] sm:w-[410px] md:w-[420px] max-w-[calc(100vw-32px)] flex-col overflow-hidden rounded-2xl border-2 border-amber-400/60 bg-[#04180f]/88 text-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.15)] transition-[height] duration-300 ease-out ${heightClass}`}
+      className={`pointer-events-auto fixed left-4 sm:left-6 top-[68px] z-20 flex w-[380px] sm:w-[410px] md:w-[420px] max-w-[calc(100vw-32px)] flex-col overflow-hidden rounded-2xl border-2 border-amber-400/60 ${isGlassOff ? 'bg-[#04180f]' : 'bg-[#04180f]/88 backdrop-blur-md'} text-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.15)] transition-[height] duration-300 ease-out ${heightClass}`}
       aria-label={`Milestone Details: ${activeStation.title}`}
     >
       {/* Header - Perfectly Aligned, Uncongested Structure */}
@@ -93,23 +96,21 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
         {/* Row 1: State/Station Badge (Left) + Viewport Height Switcher (Right) */}
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 shrink-0">
-            {navigatingTargetIndex !== null ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-950/90 border border-amber-400/80 px-2.5 py-1 text-[11px] font-mono font-bold text-amber-300 animate-pulse shadow-sm">
-                <span>🚆 En Route → STN {navigatingTargetIndex + 1}</span>
-              </span>
-            ) : (
-              <button
-                onClick={() => setRoadmapOpen(true)}
-                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-slate-950 shadow-sm hover:from-amber-300 hover:to-amber-400 transition-colors cursor-pointer group shrink-0"
-                title="Open 6-State Landscape Roadmap"
-              >
-                <span>{currentState.shortName}</span>
-                <span className="text-slate-950/40">•</span>
-                <span>STN {currentStationIndex + 1}/{stations.length}</span>
-              </button>
-            )}
+            <button
+              onClick={() => setRoadmapOpen(true)}
+              className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-slate-950 shadow-sm hover:from-amber-300 hover:to-amber-400 transition-colors cursor-pointer group shrink-0"
+              title="Open 6-State Landscape Roadmap"
+            >
+              <span>{currentState.shortName}</span>
+              <span className="text-slate-950/40">•</span>
+              <span>STN {currentStationIndex + 1}/{stations.length}</span>
+            </button>
 
-            {currentStationIndex < stations.length - 1 ? (
+            {navigatingTargetIndex !== null ? (
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-950/90 border border-amber-400/80 px-2 py-0.5 text-[10px] font-mono font-bold text-amber-300 animate-pulse shadow-sm">
+                <span>Traveling to STN {navigatingTargetIndex + 1}...</span>
+              </span>
+            ) : currentStationIndex < stations.length - 1 ? (
               <button
                 onClick={nextStation}
                 className="flex items-center gap-1 rounded-full border border-amber-400/60 bg-[#0a2419] hover:bg-amber-400 hover:text-slate-950 px-2.5 py-0.5 text-[10px] font-mono font-black text-amber-300 transition-all cursor-pointer shadow-xs"
@@ -128,22 +129,34 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
             )}
           </div>
 
-          {/* Height Switcher Pill: Peek / Half / Full */}
-          <div className="flex items-center rounded-lg border border-amber-400/40 bg-[#0a2419] p-0.5 shadow-inner shrink-0">
-            {(['peek', 'half', 'full'] as PanelHeight[]).map((h) => (
-              <button
-                key={h}
-                onClick={() => setPanelHeight(h)}
-                className={`px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase rounded transition-colors cursor-pointer shrink-0 ${
-                  panelHeight === h
-                    ? 'bg-amber-400 text-slate-950 font-black shadow-xs'
-                    : 'text-amber-300/80 hover:text-white'
-                }`}
-                title={`Set panel height to ${h}`}
-              >
-                {h}
-              </button>
-            ))}
+          <div className="flex items-center gap-1.5 shrink-0">
+            {/* Quick Milestone Deep Link Share Button */}
+            <button
+              onClick={handleShareTicket}
+              className="flex h-6 w-6 items-center justify-center rounded-lg border border-amber-400/40 bg-[#0a2419] text-amber-300 hover:bg-amber-400 hover:text-slate-950 transition-colors cursor-pointer"
+              title={copied ? 'Link Copied!' : 'Copy deep link to this station'}
+              aria-label="Share station deep link"
+            >
+              {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Share2 className="h-3.5 w-3.5" />}
+            </button>
+
+            {/* Height Switcher Pill: Peek / Half / Full */}
+            <div className="flex items-center rounded-lg border border-amber-400/40 bg-[#0a2419] p-0.5 shadow-inner shrink-0">
+              {(['peek', 'half', 'full'] as PanelHeight[]).map((h) => (
+                <button
+                  key={h}
+                  onClick={() => setPanelHeight(h)}
+                  className={`px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase rounded transition-colors cursor-pointer shrink-0 ${
+                    panelHeight === h
+                      ? 'bg-amber-400 text-slate-950 font-black shadow-xs'
+                      : 'text-amber-300/80 hover:text-white'
+                  }`}
+                  title={`Set panel height to ${h}`}
+                >
+                  {h}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
