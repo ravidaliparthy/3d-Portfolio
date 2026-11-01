@@ -39,80 +39,19 @@ export const NavigationOverlay: React.FC = () => {
   const [hoveredStation, setHoveredStation] = useState<number | null>(null);
   const hasMountedRef = React.useRef(false);
 
-  // Deep Link URL Hash & View Preset Synchronization (Runs ONLY ONCE on initial mount)
+  // On refresh / page load: ALWAYS return to the first form (Origin Departure Board Intro at Station 1)
   useEffect(() => {
     if (hasMountedRef.current) return;
     hasMountedRef.current = true;
 
-    const searchParams = new URLSearchParams(window.location.search);
-    const hash = window.location.hash.replace('#', '');
-
-    if (hash) {
-      const [stnId, hashQuery] = hash.split('?');
-      if (stnId === 'terminus') {
-        useJourneyStore.getState().setPhase('terminus');
-      } else {
-        const idx = stations.findIndex(
-          (s, i) =>
-            s.id === stnId ||
-            s.id.toLowerCase().includes(stnId.toLowerCase()) ||
-            stnId.toLowerCase().includes(s.id.toLowerCase()) ||
-            stnId === `station-${i + 1}` ||
-            stnId === `${i + 1}`
-        );
-        if (idx !== -1) {
-          goToStation(idx);
-          useJourneyStore.getState().setPhase('journey');
-        }
-      }
-
-      if (hashQuery) {
-        const hashParams = new URLSearchParams(hashQuery);
-        const hashView = hashParams.get('view');
-        if (hashView && ['chase', 'cab', 'window', 'aerial', 'station'].includes(hashView)) {
-          useJourneyStore.getState().setCameraPreset(hashView as any);
-          if (hashView === 'station') {
-            useJourneyStore.getState().setPanelHeight('peek');
-          }
-        }
-        if (hashParams.get('conductor') === 'true') {
-          useJourneyStore.getState().setConductorModalOpen(true);
-        }
-        if (hashParams.get('voice') === 'true') {
-          useJourneyStore.getState().setVoiceModalOpen(true);
-        }
-      }
-    } else {
-      useJourneyStore.getState().setPhase('intro');
+    // Clear any lingering URL hash on load/refresh so the app cleanly returns to the first form
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
     }
 
-    const viewParam = searchParams.get('view');
-    if (viewParam && ['chase', 'cab', 'window', 'aerial', 'station'].includes(viewParam)) {
-      useJourneyStore.getState().setCameraPreset(viewParam as any);
-      if (viewParam === 'station') {
-        useJourneyStore.getState().setPanelHeight('peek');
-      }
-    }
-
-    if (searchParams.get('conductor') === 'true') {
-      useJourneyStore.getState().setConductorModalOpen(true);
-    }
-    if (searchParams.get('voice') === 'true') {
-      useJourneyStore.getState().setVoiceModalOpen(true);
-    }
-  }, [goToStation, stations]);
-
-  // Debounced URL Hash synchronization to prevent browser throttling/jank during rapid scrolling
-  useEffect(() => {
-    if (activeStation && phase === 'journey') {
-      const timer = setTimeout(() => {
-        if (window.location.hash !== `#${activeStation.id}`) {
-          window.history.replaceState(null, '', `#${activeStation.id}`);
-        }
-      }, 350);
-      return () => clearTimeout(timer);
-    }
-  }, [activeStation, phase]);
+    useJourneyStore.getState().goToStation(0);
+    useJourneyStore.getState().setPhase('intro');
+  }, [goToStation]);
 
   return (
     <div id="navigation-overlay" className="pointer-events-none fixed inset-0 z-10 flex flex-col justify-between overflow-hidden select-none">

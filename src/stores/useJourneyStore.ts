@@ -330,7 +330,7 @@ export const useJourneyStore = create<JourneyStore>((set, get) => ({
       guideState: safeIndex === 0 ? 'greeting' : isTerminus ? 'celebrating' : 'pointing',
       currentGuideSpeech: station.guideLines[0] || `Welcome to ${station.title}!`,
       guideTypingComplete: false,
-      isGuideSpeechOpen: false,
+      isGuideSpeechOpen: true,
     });
   },
   

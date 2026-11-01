@@ -64,8 +64,9 @@ export const GuideCard: React.FC = React.memo(() => {
 
   useEffect(() => {
     userManuallyToggledRef.current = false;
-    // Keep conductor speech collapsed by default to prevent blocking the 3D scene
-    setGuideSpeechOpen(false);
+    // Display conductor speech message upon arriving at any station and auto-collapse after 8s
+    setGuideSpeechOpen(true);
+    startCollapseTimer();
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
