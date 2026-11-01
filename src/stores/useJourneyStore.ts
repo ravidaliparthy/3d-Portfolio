@@ -51,6 +51,8 @@ interface JourneyStore {
   isRoadmapOpen: boolean;
   isConductorModalOpen: boolean;
   isVoiceModalOpen: boolean;
+  isStoryModalOpen: boolean;
+  activeStoryId: string | null;
   
   // Camera & View
   cameraMode: CameraMode;
@@ -97,6 +99,7 @@ interface JourneyStore {
   setRoadmapOpen: (open: boolean) => void;
   setConductorModalOpen: (open: boolean) => void;
   setVoiceModalOpen: (open: boolean) => void;
+  setStoryModalOpen: (open: boolean, storyId?: string) => void;
   setCameraMode: (mode: CameraMode) => void;
   toggleCameraMode: () => void;
   setCameraPreset: (preset: CameraPresetView) => void;
@@ -162,6 +165,8 @@ export const useJourneyStore = create<JourneyStore>((set, get) => ({
   isRoadmapOpen: false,
   isConductorModalOpen: false,
   isVoiceModalOpen: false,
+  isStoryModalOpen: false,
+  activeStoryId: null,
   
   guideVisible: true,
   isGuideSpeechOpen: true,
@@ -409,6 +414,14 @@ export const useJourneyStore = create<JourneyStore>((set, get) => ({
     set({ isConductorModalOpen, isMenuOpen: false, isCameraMenuOpen: false, isGuideSpeechOpen: false }),
   setVoiceModalOpen: (isVoiceModalOpen) =>
     set({ isVoiceModalOpen, isMenuOpen: false, isCameraMenuOpen: false, isGuideSpeechOpen: false }),
+  setStoryModalOpen: (isStoryModalOpen, activeStoryId) =>
+    set({
+      isStoryModalOpen,
+      activeStoryId: activeStoryId || null,
+      isMenuOpen: false,
+      isCameraMenuOpen: false,
+      isGuideSpeechOpen: false,
+    }),
   setCameraMode: (cameraMode) => set({ cameraMode }),
   setCameraPreset: (cameraPreset) =>
     set({

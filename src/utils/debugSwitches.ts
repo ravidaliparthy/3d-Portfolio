@@ -21,3 +21,4 @@ export function getDebugSwitch(param: string): string | null {
 export function isDebugDisabled(param: string): boolean {
   return getDebugSwitch(param) === 'off';
 }
+

@@ -17,6 +17,7 @@ import { ConductorBoardingDialog } from './ConductorBoardingDialog';
 import { CameraViewDropdown } from './CameraViewDropdown';
 import { VoiceAssistantModal } from './VoiceAssistantModal';
 import { KeyboardHelpModal } from './KeyboardHelpModal';
+import { StoryLineModal } from './StoryLineModal';
 import { Mic } from 'lucide-react';
 import { isDebugDisabled } from '../../utils/debugSwitches';
 
@@ -143,6 +144,7 @@ export const NavigationOverlay: React.FC = () => {
         onClose={() => setVoiceModalOpen(false)}
       />
       <KeyboardHelpModal />
+      <StoryLineModal />
 
       {/* ============================================================== */}
       {/* ZONE 1: TOP STRIP                                              */}

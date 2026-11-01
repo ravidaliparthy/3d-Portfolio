@@ -20,7 +20,10 @@ import {
   CheckCircle2,
   Building2,
   Eye,
+  BookOpen,
+  ArrowRight,
 } from 'lucide-react';
+import { portfolioData } from '../../data';
 
 export const StationDesktopPanel: React.FC = React.memo(() => {
   const activeStation = useJourneyStore((s) => s.activeStation);
@@ -52,6 +55,15 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
 
   const hasChallenges = Boolean(activeStation.challenges && activeStation.challenges.length > 0);
   const liveLink = activeStation.links.find((l) => l.type === 'live' || l.label.toLowerCase().includes('live'));
+
+  const matchingStory = (portfolioData.story || []).find((s) => {
+    if (s.linkedStationId === activeStation.id) return true;
+    if (activeStation.id === 'station-05-drone-rooftop' && s.id.includes('rooftop')) return true;
+    if (activeStation.id === 'station-06-iit-dhanbad-paper' && s.id.includes('seismic')) return true;
+    if (activeStation.id === 'station-07-expense-tracker' && s.id.includes('expense')) return true;
+    if (activeStation.id === 'station-10-hackathon-finalist' && s.id.includes('svamitva')) return true;
+    return false;
+  });
   const currentState = getPortfolioStateForStation(currentStationIndex);
 
   const handleShareTicket = () => {
@@ -218,6 +230,23 @@ export const StationDesktopPanel: React.FC = React.memo(() => {
               </div>
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
+          </div>
+        )}
+
+        {/* Linked In-Depth Story & Hard Tradeoffs */}
+        {panelHeight !== 'peek' && matchingStory && (
+          <div>
+            <button
+              onClick={() => useJourneyStore.getState().setStoryModalOpen(true, matchingStory.id)}
+              className="inline-flex w-full items-center justify-between rounded-xl border border-amber-400/60 bg-gradient-to-r from-[#072418] to-[#0a3322] px-3.5 py-2 text-xs font-bold text-amber-300 shadow-sm hover:border-amber-300 hover:text-white transition-all cursor-pointer group"
+              title="Read the deep engineering case study, trade-offs, and algorithms behind this project"
+            >
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-4 w-4 text-amber-400 group-hover:scale-110 transition-transform shrink-0" />
+                <span className="truncate">Story & Tradeoffs: {matchingStory.headline}</span>
+              </div>
+              <ArrowRight className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+            </button>
           </div>
         )}
 

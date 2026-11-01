@@ -17,6 +17,7 @@ import {
   Sliders,
   HelpCircle,
   Zap,
+  BookOpen,
 } from 'lucide-react';
 
 const CAMERA_VIEWS: { id: CameraPresetView; label: string; icon: React.FC<{ className?: string }> }[] = [
@@ -152,6 +153,21 @@ export const UnifiedMenuDropdown: React.FC = () => {
                 <span className="text-[10px] text-slate-300">Official verified master CV</span>
               </div>
             </a>
+
+            {/* Engineering Stories & Tradeoffs */}
+            <button
+              role="menuitem"
+              onClick={() => handleAction(() => useJourneyStore.getState().setStoryModalOpen(true))}
+              className="flex w-full items-center gap-3 rounded-xl border border-amber-400/50 bg-[#062015] p-2.5 text-xs hover:border-amber-400 hover:bg-[#092c1a] transition-all cursor-pointer text-left"
+            >
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-amber-400/60 bg-[#020d07] text-amber-300">
+                <BookOpen className="h-4 w-4" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-black text-amber-300 text-xs">Stories & Tradeoffs (5 Case Studies)</span>
+                <span className="text-[10px] text-slate-300">Hard engineering obstacles & decisions</span>
+              </div>
+            </button>
 
             {/* Recruiter Dossier */}
             <button

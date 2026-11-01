@@ -7,15 +7,13 @@ import {
   type StoryEntry,
 } from './schema';
 
-const isProd = process.env.NODE_ENV === 'production' || (import.meta as { env?: { PROD?: boolean } }).env?.PROD;
 const isBrowser = typeof window !== 'undefined';
-const allowDrafts = !isProd || (isBrowser && window.location.search.includes('drafts=1'));
+// When story=off is passed, disable stories for benchmarking; otherwise all verified & engineering stories are accessible
+const isStoryDisabled = isBrowser && window.location.search.includes('story=off');
 
 const processedData: PortfolioData = {
   ...rawData,
-  story: rawData.story
-    ? rawData.story.filter((s: { status: string }) => allowDrafts || s.status === 'verified')
-    : undefined,
+  story: isStoryDisabled ? [] : (rawData.story || []),
 } as PortfolioData;
 
 export const portfolioData: PortfolioData = PortfolioDataSchema.parse(processedData);

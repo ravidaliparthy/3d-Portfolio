@@ -252,6 +252,21 @@ export const VoiceAssistantModal: React.FC<{ isOpen: boolean; onClose: () => voi
       onClose();
       return;
     }
+    if (
+      q.includes('story') ||
+      q.includes('stories') ||
+      q.includes('case study') ||
+      q.includes('tradeoff') ||
+      q.includes('difficulty') ||
+      q.includes('difficulties') ||
+      q.includes('obstacle') ||
+      q.includes('challenge')
+    ) {
+      useJourneyStore.getState().setStoryModalOpen(true);
+      setAnswer('Opening Engineering Stories & Hard Tradeoffs (5 Case Studies).');
+      onClose();
+      return;
+    }
 
     // 2. High-Level Composite Intents: Projects Overview
     if (
