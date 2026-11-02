@@ -57,7 +57,7 @@ export const DepartureBoardIntro: React.FC = () => {
           handleBoardTrain();
         }
       }}
-      className={`fixed inset-0 z-40 pointer-events-auto flex items-center justify-center bg-black/75 px-4 transition-opacity duration-500 overflow-y-auto cursor-default ${
+      className={`fixed inset-0 z-40 pointer-events-auto flex items-center justify-center bg-black/75 px-3 sm:px-4 py-4 transition-opacity duration-500 overflow-y-auto cursor-default ${
         phase === 'boarding' ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
       }`}
       role="dialog"
@@ -65,7 +65,7 @@ export const DepartureBoardIntro: React.FC = () => {
       aria-label="Welcome to the Ravi Express Departure Concourse"
     >
       {/* Container with Suspended Railway Station Banner Visual Framing */}
-      <div className="relative w-full max-w-3xl my-auto text-left pt-6">
+      <div className="relative w-full max-w-3xl my-auto text-left pt-2 sm:pt-6">
         
         {/* Overhead Brass Station Suspension Cables */}
         <div className="hidden sm:block pointer-events-none absolute -top-16 left-12 h-20 w-1.5 bg-gradient-to-b from-amber-200 via-amber-500 to-amber-600 shadow-md">
@@ -78,7 +78,7 @@ export const DepartureBoardIntro: React.FC = () => {
         </div>
 
         {/* Grand Railway Concourse Suspended Banner with Rich Opaque Heritage Styling */}
-        <div className="relative overflow-hidden rounded-3xl border-2 border-amber-400/70 bg-[#04180f]/95 p-6 md:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.95),0_0_60px_rgba(245,158,11,0.2),inset_0_1px_1px_rgba(255,255,255,0.25)] pointer-events-auto">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-amber-400/70 bg-[#04180f]/95 p-4 sm:p-6 md:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.95),0_0_60px_rgba(245,158,11,0.2),inset_0_1px_1px_rgba(255,255,255,0.25)] pointer-events-auto">
           
           {/* Decorative Corner Rivets */}
           <div className="pointer-events-none absolute top-3 left-3 h-2.5 w-2.5 rounded-full bg-amber-400/60 border border-slate-900 shadow" />
@@ -87,7 +87,7 @@ export const DepartureBoardIntro: React.FC = () => {
           <div className="pointer-events-none absolute bottom-3 right-3 h-2.5 w-2.5 rounded-full bg-amber-400/60 border border-slate-900 shadow" />
 
           {/* Banner Top Header Ribbon */}
-          <div className="mb-5 flex flex-wrap items-center justify-between border-b border-slate-900/25 pb-4 gap-3 relative z-10">
+          <div className="mb-4 sm:mb-5 flex flex-wrap items-center justify-between border-b border-slate-900/25 pb-3 sm:pb-4 gap-2.5 sm:gap-3 relative z-10">
             <div className="flex items-center gap-2.5 font-mono text-xs tracking-widest uppercase">
               <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-slate-950 border border-slate-900 text-amber-400 shadow-sm">
                 <Train className="h-4 w-4" />
@@ -98,12 +98,12 @@ export const DepartureBoardIntro: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2.5 text-xs font-mono">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 text-xs font-mono">
               <span className="flex items-center gap-1.5 text-white bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800 font-bold shadow-sm">
                 <Clock className="h-3.5 w-3.5 text-amber-400" />
                 {intro.departureTime}
               </span>
-              <span className="rounded-lg bg-amber-400 px-3 py-1 text-slate-950 font-black border border-amber-500 shadow-sm">
+              <span className="rounded-lg bg-amber-400 px-2.5 sm:px-3 py-1 text-slate-950 font-black border border-amber-500 shadow-sm">
                 {intro.platformNumber}
               </span>
               <span className="rounded-lg bg-emerald-400 px-2.5 py-1 text-slate-950 font-black border border-emerald-500 text-[11px] shadow-sm">
@@ -113,9 +113,9 @@ export const DepartureBoardIntro: React.FC = () => {
           </div>
 
           {/* WELCOME TO THE RAVI EXPRESS */}
-          <div className="mb-6 space-y-2 relative z-10">
+          <div className="mb-4 sm:mb-6 space-y-1.5 sm:space-y-2 relative z-10">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border-2 border-amber-600/70 bg-amber-400 px-3 py-1 text-xs font-black uppercase tracking-widest text-slate-950 shadow-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full border-2 border-amber-600/70 bg-amber-400 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs font-black uppercase tracking-widest text-slate-950 shadow-sm">
                 <Sparkles className="h-3.5 w-3.5 text-slate-950" />
                 CENTRAL MILESTONE EXPRESS
               </span>
@@ -124,20 +124,20 @@ export const DepartureBoardIntro: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white font-sans drop-shadow-md">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white font-sans drop-shadow-md">
               WELCOME TO THE RAVI EXPRESS
             </h1>
-            <p className="text-sm md:text-base text-amber-300 font-mono font-bold tracking-wide">
+            <p className="text-xs sm:text-sm md:text-base text-amber-300 font-mono font-bold tracking-wide">
               {owner.name} • {owner.title}
             </p>
           </div>
 
           {/* Conductor Welcome Panel featuring Charan's Exact Portrait */}
-          <div className="mb-6 grid grid-cols-1 md:grid-cols-12 gap-5 rounded-2xl border border-amber-400/40 bg-[#061c13]/90 p-4 md:p-6 shadow-inner relative z-10">
+          <div className="mb-4 sm:mb-6 grid grid-cols-1 md:grid-cols-12 gap-3.5 sm:gap-5 rounded-2xl border border-amber-400/40 bg-[#061c13]/90 p-3 sm:p-4 md:p-6 shadow-inner relative z-10">
             {/* Left Column: Charan's Conductor Portrait Photo */}
-            <div className="md:col-span-4 flex flex-col items-center justify-center gap-2 border-b md:border-b-0 md:border-r border-emerald-500/30 pb-4 md:pb-0 md:pr-4">
+            <div className="md:col-span-4 flex flex-col items-center justify-center gap-2 border-b md:border-b-0 md:border-r border-emerald-500/30 pb-3 md:pb-0 md:pr-4">
               <div className="relative group">
-                <div className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-2xl border-2 border-amber-400/80 bg-gradient-to-b from-[#092218] via-[#051610] to-[#020b08] shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
+                <div className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-40 md:w-40 overflow-hidden rounded-2xl border-2 border-amber-400/80 bg-gradient-to-b from-[#092218] via-[#051610] to-[#020b08] shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
                   <img
                     src="/assets/guide/guide_reference.jpg"
                     alt="Conductor Charan"
@@ -149,16 +149,16 @@ export const DepartureBoardIntro: React.FC = () => {
                   Journey Conductor
                 </span>
               </div>
-              <div className="text-center mt-1.5">
+              <div className="text-center mt-1">
                 <span className="text-xs font-black text-amber-300 block">Charan</span>
                 <p className="text-[10px] text-emerald-200 font-mono font-bold">Conductor on the Express</p>
               </div>
             </div>
 
             {/* Right Column: Conductor Welcome & Journey Overview */}
-            <div className="md:col-span-8 flex flex-col justify-between space-y-3.5">
-              <div className="space-y-2">
-                <h3 className="text-sm font-black text-white flex items-center gap-1.5">
+            <div className="md:col-span-8 flex flex-col justify-between space-y-2.5 sm:space-y-3.5">
+              <div className="space-y-1.5 sm:space-y-2">
+                <h3 className="text-xs sm:text-sm font-black text-white flex items-center gap-1.5">
                   <ShieldCheck className="h-4 w-4 text-emerald-400" />
                   <span>All Aboard for 12 Verified Engineering Milestones</span>
                 </h3>
@@ -168,7 +168,7 @@ export const DepartureBoardIntro: React.FC = () => {
               </div>
 
               {/* Quick Route Preview Cards across States */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2 pt-1 font-mono text-[10px] sm:text-[11px]">
                 <div className="rounded-xl bg-[#03130c]/90 border border-amber-400/30 p-2 shadow-sm">
                   <span className="block text-emerald-300 text-[9px] uppercase font-bold tracking-wider">Station 01</span>
                   <span className="font-black text-amber-300 text-xs truncate block">About Me</span>

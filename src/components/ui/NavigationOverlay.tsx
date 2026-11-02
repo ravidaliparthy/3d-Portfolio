@@ -110,9 +110,9 @@ export const NavigationOverlay: React.FC = () => {
           </div>
         </div>
 
-        {/* Station Rail: Interactive Track with Name Labels on Hover / Focus (Visible only during Journey phase) */}
+        {/* Station Rail: Interactive Track with Name Labels on Hover / Focus (Visible on tablet & desktop in Journey phase) */}
         {phase === 'journey' && (
-          <div className="relative flex items-center animate-in fade-in duration-300">
+          <div className="hidden lg:flex relative items-center animate-in fade-in duration-300">
             <nav
               aria-label="Route Station Track"
               className="flex items-center gap-1 sm:gap-1.5 rounded-full border border-amber-400/40 bg-[#04160e]/95 px-2.5 py-1 sm:px-3.5 sm:py-1.5 shadow-lg"

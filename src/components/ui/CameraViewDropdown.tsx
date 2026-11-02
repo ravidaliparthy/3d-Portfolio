@@ -118,7 +118,7 @@ export const CameraViewDropdown: React.FC = () => {
         title="Open Camera Viewpoints Menu (Chase, Driver Cab, Window, Aerial, Station) [Key V]"
       >
         <CurrentIcon className="h-3.5 w-3.5" />
-        <span className="font-bold tracking-wide uppercase">{cameraPreset}</span>
+        <span className="hidden sm:inline font-bold tracking-wide uppercase">{cameraPreset}</span>
         <ChevronDown className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
